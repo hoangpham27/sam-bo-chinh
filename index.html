@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Trang chủ - Sâm Bố Chính Hoàng Gia</title>
+
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+    </head>
+    <body style="height: 6000px">
+        <header class="header">
+            <div class="content">
+                <nav class="navbar">
+                    <!-- Logo -->
+                    <a href="#" class="logo">
+                        <img
+                            src="./assets/img/logo-sbc.png"
+                            alt="Sâm bố chính hoàng gia"
+                            width="64"
+                            height="64"
+                        />
+                    </a>
+                    <!-- Navigation -->
+                    <ul class="navigation">
+                        <li>
+                            <a href="#">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="#">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="#">Sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="#">Chứng nhận - Công bố</a>
+                        </li>
+                        <li>
+                            <a href="#">Kiến thức</a>
+                        </li>
+                        <li>
+                            <a href="#">Báo chí</a>
+                        </li>
+                        <li>
+                            <a href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <!-- Cart Layout -->
+                    <div class="header-cart">
+                        <div class="header-cart-wrap">
+                            <a href="#" class="btn">
+                                <span class="cart-title">Giỏ hàng</span>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span
+                                    class="cart-quantity js-cart-quantity"
+                                    data-testid="cart-quantity"
+                                    >0</span
+                                >
+                            </a>
+                            <!-- No cart: cart-list--no-cart and msg: display none-->
+                            <div class="cart-list js-cart-list">
+                                <p class="msg">
+                                    Chưa có sản phẩm trong giỏ hàng.
+                                </p>
+                                <!-- Cart item -->
+                                <ul class="cart-list-items js-cart-list-items">
+                                    <!-- <li class="cart-item">
+                                       
+                                        <a href="#!" class="cart-item-wrap">
+                                            <img
+                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
+                                                alt=""
+                                                class="img"
+                                            />
+                                        </a>
+                                        <div class="cart-item-info">
+                                            <a href="" class="item-name"
+                                                >Bồ Câu tần sâm Bố Chính</a
+                                            >
+                                            <div class="item-quantity-price">
+                                                <span class="item-quantity"
+                                                    >1 ×
+                                                </span>
+                                                <span class="item-price"
+                                                    >125000 VNĐ</span
+                                                >
+                                            </div>
+                                        </div>
+
+                                        <span class="item-remove">
+                                            <i
+                                                class="fa-regular fa-circle-xmark"
+                                            ></i>
+                                        </span>
+                                    </li>
+                                    <li class="cart-item">
+                                      
+                                        <a href="#!" class="cart-item-wrap">
+                                            <img
+                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
+                                                alt=""
+                                                class="img"
+                                            />
+                                        </a>
+                                        <div class="cart-item-info">
+                                            <a href="" class="item-name"
+                                                >Bồ Câu tần sâm Bố Chính</a
+                                            >
+                                            <div class="item-quantity-price">
+                                                <span class="item-quantity"
+                                                    >1 ×</span
+                                                >
+                                                <span class="item-price"
+                                                    >125000&nbspVNĐ</span
+                                                >
+                                            </div>
+                                        </div>
+
+                                        <span class="item-remove">
+                                            <i
+                                                class="fa-regular fa-circle-xmark"
+                                            ></i>
+                                        </span>
+                                    </li> -->
+                                </ul>
+                                <div class="cart-cta js-cart-cta">
+                                    <p class="total-price">
+                                        <strong>Tổng số phụ:</strong>
+                                        <span></span>
+                                    </p>
+                                    <div class="cart-pay-btns">
+                                        <a href="#!" class="btn cart-btn"
+                                            >Xem Giỏ hàng</a
+                                        >
+                                        <a href="#!" class="btn pay-btn"
+                                            >Thanh toán</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="main">
+            <div class="main-slider">
+                <img
+                    src="./assets/img/bannersbc-2048x731.jpg"
+                    alt="Banner Sâm Bố Chính Hoàng Gia"
+                />
+            </div>
+
+            <section class="introduce">
+                <div class="content">
+                    <div class="row">
+                        <div class="info">
+                            <h3 class="title">Sâm Bố Chính Hoàng Gia</h3>
+                            <p class="desc" style="margin-top: 54px">
+                                Cách đây hơn 300 năm được người Chăm phát hiện ở
+                                Châu Bố Chính. Là sản vật tiến vua từ thời Vua
+                                Lê Chúa Trịnh. Tuy nhiên, loài sâm quý này đã bị
+                                thất truyền. 2017, người dân Quảng Bình đã
+                                nghiên cứu và bắt đầu khôi phục. Đến năm 2019 đã
+                                được trồng thành công và chính thức được đưa ra
+                                thị trường.
+                            </p>
+                            <p class="desc">
+                                Tiếp nối hành trình, Công ty TNHH SBC HOÀNG GIA
+                                phát triển và lan tỏa giá trị cây sâm Bố Chính
+                                thông qua bộ sản phẩm: Sâm tươi, Sâm Khô cắt
+                                lát, Bột sâm, Sâm ngâm mật ong, Rượu sâm, Mứt
+                                Sâm, Xà phòng sâm… Sâm Bố Chính Hoàng Gia cam
+                                kết luôn mang đến cho khách hàng sản phẩm chất
+                                lượng nhất, với giá cả cạnh tranh nhất trên thị
+                                trường.
+                            </p>
+                            <a href="#" class="btn">
+                                <span class="see-more"> Xem thêm </span>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </a>
+                        </div>
+                        <div class="banner">
+                            <img
+                                src="./assets/img/bannersbc-2.jpg"
+                                alt=""
+                                class="banner-introduce"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="why-us">
+                <div class="content">
+                    <h3 class="title">Tại sao chọn chúng tôi</h3>
+                    <div class="slider">
+                        <div class="slide slide-1">
+                            <i class="fa-solid fa-certificate"></i>
+                            <h4 class="sub-title">Chất lượng hàng đầu</h4>
+                            <p class="desc">
+                                Nguồn giống chọn lọc cẩn thận. Hàm lượng dược
+                                chất vượt trội. Dây chuyền sản xuất hiện đại. Sử
+                                dụng nguyên liệu hữu cơ.
+                            </p>
+                        </div>
+                        <div class="slide slide-2">
+                            <i class="fa-brands fa-yelp"></i>
+                            <h4 class="sub-title">Sự tin tưởng</h4>
+                            <p class="desc">
+                                Sản phẩm của chúng tôi được kiểm duyệt bởi các
+                                tổ chức uy tín cao, tạo sự an tâm cho khách
+                                hàng.
+                            </p>
+                        </div>
+                        <div class="slide slide-3">
+                            <i class="fa-brands fa-skyatlas"></i>
+                            <h4 class="sub-title">Hỗ trợ tận tâm</h4>
+                            <p class="desc">
+                                Chăm sóc và hỗ trợ khách hàng là một trong những
+                                chính sách ưu tiên hàng đầu của chúng tôi
+                            </p>
+                        </div>
+                        <div class="slide slide-4">
+                            <i class="fa-brands fa-pagelines"></i>
+                            <h4 class="sub-title">Tối ưu giá trị</h4>
+                            <p class="desc">
+                                Luôn hướng tới tối ưu hóa các chi phí để mang
+                                lại khách hàng sản phẩm chất lượng với giá cả
+                                hợp lý nhất.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features">
+                <div class="content">
+                    <h3 class="title">Sâm Bố Chính Hoàng Gia</h3>
+                    <p class="sub-title">
+                        Sâm Bố Chính Hoàng Gia là món quà sức khỏe thượng hạng
+                        để bạn luôn sẵn sàng đối mặt với mọi thử thách trong
+                        cuộc sống.
+                    </p>
+                    <div class="row">
+                        <div class="accordion">
+                            <button class="accordion-btn js-accordion-btn-1">
+                                <span class="accordion-name">
+                                    Tăng cường khả năng miễn dịch
+                                </span>
+                            </button>
+                            <div class="panel js-panel-1">
+                                <p class="desc">
+                                    Nghiên cứu của họ cũng cho thấy nhân sâm
+                                    hoạt động trên hệ miễn dịch, tác động đến sự
+                                    sản sinh của virus và là một phương thuốc
+                                    hữu hiệu để ngăn ngừa bệnh cúm.
+                                </p>
+                            </div>
+
+                            <button class="accordion-btn js-accordion-btn-1">
+                                <span class="accordion-name">
+                                    Cải thiện trí nhớ
+                                </span>
+                            </button>
+                            <div class="panel js-panel-1">
+                                <p class="desc">
+                                    Bổ sung 2g nhân sâm mỗi ngày sẽ giúp duy trì
+                                    năng lực cơ thể hoạt động ở trạng thái khỏe
+                                    mạnh và luôn minh mẫn, có thể cải thiện trí
+                                    nhớ mà gần như không có tác dụng phụ nào.
+                                </p>
+                            </div>
+
+                            <button class="accordion-btn js-accordion-btn-1">
+                                <span class="accordion-name">
+                                    Chống lão hóa
+                                </span>
+                            </button>
+                            <div class="panel js-panel-1">
+                                <p class="desc">
+                                    Thành phần chống lão hóa từ lá, thân và củ
+                                    sâm giúp cải thiện độ đàn hồi và cải thiện
+                                    các dấu hiệu của nếp nhăn sâu trên da.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img
+                                src="./assets/img/feature-img.png"
+                                alt=""
+                                width="373px"
+                                height="435px"
+                            />
+                        </div>
+                        <div class="accordion">
+                            <button class="accordion-btn js-accordion-btn-2">
+                                <span class="accordion-name">
+                                    Hỗ trợ tuần hoàn máu
+                                </span>
+                            </button>
+                            <div class="panel js-panel-2">
+                                <p class="desc">
+                                    Nhân sâm có tác dụng giúp cải thiện sự tập
+                                    trung, tăng cường tuần hoàn não. Vị ngọt của
+                                    nhân sâm có thể làm gia tăng tuần hoàn máu
+                                    và tăng cường sinh lực
+                                </p>
+                            </div>
+
+                            <button class="accordion-btn js-accordion-btn-2">
+                                <span class="accordion-name">
+                                    Giúp giảm thiểu mệt mỏi
+                                </span>
+                            </button>
+                            <div class="panel js-panel-2">
+                                <p class="desc">
+                                    Các loại sâm nói chung đều giúp tăng lực,
+                                    giảm mệt mỏi nhờ các thành phần ginsenoside
+                                    có nhiều trong củ sâm. Nhất là chứng mệt mỏi
+                                    vào cuối giờ chiều thường gặp ở tuổi trung
+                                    niên
+                                </p>
+                            </div>
+
+                            <button class="accordion-btn js-accordion-btn-2">
+                                <span class="accordion-name">
+                                    Cải thiện sức khoẻ phụ nữ
+                                </span>
+                            </button>
+                            <div class="panel js-panel-2">
+                                <p class="desc">
+                                    Nhân sâm đã được khẳng định là một vị thuốc
+                                    quý giúp các chị em phụ nữ chăm sóc sức
+                                    khỏe, cải thiện sinh lý và làm đẹp
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="products">
+                <h3 class="title">Sản phẩm</h3>
+                <div class="content">
+                    <div class="products-layout">
+                        <!-- <div class="product product-1">
+                            <img src="" alt="">
+                            <a href=""></a>
+                            <span></span>
+                            <a href="" class="btn"></a>
+                        </div> -->
+                    </div>
+                </div>
+                <a href="#" class="see-more-btn btn">
+                    <span class="see-more"> Xem thêm </span>
+                    <i class="fa-solid fa-angle-right"></i>
+                </a>
+            </section>
+        </div>
+
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-1.11.0.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        ></script>
+        <script type="module" src="./assets/scripts/app.js"></script>
+    </body>
+</html>
