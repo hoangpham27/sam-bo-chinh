@@ -1,4 +1,4 @@
-// Xử lý phần main-slider
+// handle main-slider
 $(document).ready(function () {
     $(".main-slider").slick({
         draggable: true,
@@ -9,7 +9,7 @@ $(document).ready(function () {
     });
 });
 
-// Xử lý phần why-us slider
+// handle why-us slider
 $(document).ready(function () {
     $(".why-us .slider").slick({
         draggable: true,
@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 });
 
-// Xử lý phần accordion
+// handle accordion
 var accBtns = document.querySelectorAll(".accordion-btn");
 
 function togglePanel() {
@@ -71,7 +71,7 @@ for (const accBtn of accBtns) {
     accBtn.addEventListener("click", togglePanel);
 }
 
-// Xử lý phần products-layout
+// handle products-layout
 import products from "./products.js";
 
 const productsLayout = document.querySelector(".products-layout");
@@ -86,7 +86,16 @@ for (let i = 0; i < products.length; i++) {
 }
 // (() => {})();
 
-// Xử lý generator layout code
+// handle currencyVND
+function formatCurrencyVND(amount) {
+    const VND = new Intl.NumberFormat("vi-VN", {
+        style: "currency",
+        currency: "VND",
+    });
+    return VND.format(amount).replace("₫", "VNĐ");
+}
+
+// Generator layout code
 const productsData = product8s.map((product) => {
     let flag = false;
     if (product.currentPrice === product.oldPrice) flag = true;
@@ -98,14 +107,10 @@ const productsData = product8s.map((product) => {
         <div class="product-price-cart">
             <div class="product-sale">
                 <span class="${flag ? "product--not-sale" : "product--sale"}">
-                    ${
-                        flag
-                            ? ""
-                            : (product.oldPrice / 1000).toFixed(3) + "&nbspVNĐ"
-                    }
+                    ${flag ? "" : formatCurrencyVND(product.oldPrice)}
                 </span>
                 <span class="product-price">
-                    ${(product.currentPrice / 1000).toFixed(3)}&nbspVNĐ
+                    ${formatCurrencyVND(product.currentPrice)}
                 </span>
             </div>
 
@@ -118,17 +123,7 @@ const productsData = product8s.map((product) => {
         </span>
     </div>`;
 });
-
 productsLayout.innerHTML = productsData.join("");
-
-function findMatchingItem(arr, findItemId) {
-    for (const item of arr) {
-        // console.log(item.id);
-        if (findItemId === item.productId || findItemId === item.id) {
-            return item;
-        }
-    }
-}
 
 function genCartQty() {
     var cartQty = 0;
@@ -138,110 +133,159 @@ function genCartQty() {
     cartQuantity.innerHTML = cartQty;
 }
 
-// Xử lý add to cart
-var cart = [];
+function genTotalPrice() {
+    var totalPrice = 0;
+    carts.forEach((cartsItem) => {
+        totalPrice += cartsItem.productQuantity * cartsItem.currentPrice;
+    });
+    cartCtaPrice.innerHTML = formatCurrencyVND(totalPrice);
+}
+
+// Upadte in carts
+function findCart(productId) {
+    // Find product in products
+    const productItem = products.find((product) => product.id === productId);
+    // Find item.qty in cart
+    const productQuantity = cart.find(
+        (item) => item.productId === productId
+    ).quantity;
+    // spread
+    // if productQuantity === 1 is new item -> push to carts else update qty
+    if (productQuantity === 1) {
+        const cartsItem = {
+            ...productItem,
+            productQuantity,
+        };
+        carts.push(cartsItem);
+    } else {
+        carts.forEach((cartsItem) => {
+            if (cartsItem.id === productId) {
+                cartsItem.productQuantity = productQuantity;
+            }
+        });
+    }
+
+    renderCart();
+}
+
+// Save items in cartListItems
+function renderCart() {
+    if (cart.length !== 0 && carts.length !== 0) {
+        cartList.classList.remove("cart-list--no-cart");
+        cartCta.style.display = "block";
+    }
+    const html = carts.map(
+        (cart) =>
+            `<li class="cart-item" data-product-id="${cart.id}">
+   <a href="#!" class="cart-item-wrap">
+       <img
+           src="${cart.image}"
+           alt="${cart.name}"
+           class="img"
+       />
+   </a>
+   <div class="cart-item-info">
+       <a href="" class="item-name"
+           >${cart.name}</a
+       >
+       <div class="item-quantity-price">
+           <span class="item-quantity">${cart.productQuantity} ×
+           </span>
+           <span class="item-price"
+               >${formatCurrencyVND(cart.currentPrice)}</span>
+       </div>
+   </div>
+       <span class="item-remove js-item-remove">
+       <i
+           class="fa-regular fa-circle-xmark"
+       ></i>
+   </span>
+</li>`
+    );
+
+    cartListItems.innerHTML = html.join("");
+}
+
+// Write this function because it use for the first load page and after addToCart
+function removeFromCart() {
+    if (cart.length && carts.length > 0) {
+        var itemsRemove = cartListItems.querySelectorAll(".js-item-remove");
+        // handle removeFromCart
+        itemsRemove.forEach((itemRemove) => {
+            itemRemove.addEventListener("click", () => {
+                itemRemove.parentElement.style.display = "none";
+                // Update cart and carts
+                let productId = itemRemove.parentElement.dataset.productId;
+                const itemCartStorage = cart.find(
+                    (item) => item.productId === productId
+                );
+                const itemCarts = carts.find(
+                    (cartsItem) => cartsItem.id === productId
+                );
+                // Remove item from cart
+                cart = cart.filter((i) => i !== itemCartStorage);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                // Remove item from carts
+                carts = carts.filter((i) => i !== itemCarts);
+                if (cart.length !== 0) {
+                    cartList.classList.remove("cart-list--no-cart");
+                } else {
+                    cartCta.style.display = "none";
+                    cartList.classList.add("cart-list--no-cart");
+                }
+                genCartQty();
+                genTotalPrice();
+            });
+        });
+    }
+}
+
+// handle add to cart
+var cart = JSON.parse(localStorage.getItem("cart") || "[]");
 var cartQuantity = document.querySelector(".js-cart-quantity");
 var cartList = document.querySelector(".js-cart-list");
 var cartListItems = cartList.querySelector(".js-cart-list-items");
 var cartCta = cartList.querySelector(".js-cart-cta");
 var cartCtaPrice = cartList.querySelector(".js-cart-cta span");
-// console.log(cartListItems);
-// cart trống hoặc kiểm tra quantity = 0? thì thêm class "cart-list--no-cart" vào "cart-list"
-if (cart.length === 0)
-    // {
+var carts = cart.map((item) => {
+    const productItem = products.find(
+        (product) => product.id === item.productId
+    );
+    return {
+        ...productItem,
+        productQuantity: item.quantity,
+    };
+});
+
+if (cart.length && carts.length > 0) {
+    genCartQty();
+    renderCart();
+    genTotalPrice();
+    removeFromCart();
+} else {
     cartList.classList.add("cart-list--no-cart");
-// Xử lý addToCart
-document.querySelectorAll(".js-add-to-cart").forEach((button) => {
-    button.addEventListener("click", () => {
-        cartList.classList.remove("cart-list--no-cart");
-        cartCta.style.display = "block";
-        const productId = button.dataset.productId;
-        var matchingItem = findMatchingItem(cart, productId);
-        if (matchingItem) {
-            matchingItem.quantity += 1;
-        } else {
+}
+
+const productList = productsLayout.querySelectorAll(".product");
+productList.forEach((product) => {
+    const btn = product.querySelector(".js-add-to-cart");
+    btn.addEventListener("click", () => {
+        const productId = btn.dataset.productId;
+        // find item in storage
+        const itemCartStorage = cart.find(
+            (item) => item.productId === productId
+        );
+        // Update in cart
+        if (!itemCartStorage) {
             cart.push({
-                productId: productId,
+                productId,
                 quantity: 1,
             });
-        }
+        } else itemCartStorage.quantity += 1;
+        localStorage.setItem("cart", JSON.stringify(cart));
         genCartQty();
-
-        // Gen vao cartListItems
-        var totalPrice = 0;
-        const cartListItemsData = cart.map((item) => {
-            matchingItem = findMatchingItem(products, item.productId);
-            totalPrice += item.quantity * matchingItem.currentPrice;
-
-            return `<li class="cart-item" data-product-id="${matchingItem.id}">
-                <a href="#!" class="cart-item-wrap">
-                    <img
-                        src="${matchingItem.image}"
-                        alt="${matchingItem.name}"
-                        class="img"
-                    />
-                </a>
-                <div class="cart-item-info">
-                    <a href="" class="item-name"
-                        >${matchingItem.name}</a
-                    >
-                    <div class="item-quantity-price">
-                        <span class="item-quantity">${item.quantity} ×
-                        </span>
-                        <span class="item-price"
-                            >${(matchingItem.currentPrice / 1000).toFixed(
-                                3
-                            )}&nbspVNĐ</span>
-                    </div>
-                </div>
-                    <span class="item-remove js-item-remove">
-                    <i
-                        class="fa-regular fa-circle-xmark"
-                    ></i>
-                </span>
-            </li>`;
-        });
-        cartListItems.innerHTML = cartListItemsData.join("");
-        // Gen totalPrice vao cart-cta span
-        cartCtaPrice.innerHTML = `${(totalPrice / 1000).toFixed(3)}&nbspVNĐ`;
-
-        // Bắt các item-remove (phải tạm thời để trong lúc addToCart vì chưa có localStorage nên nếu bắt ở ngoài sẽ undifined ngay)
-        if (cart.length > 0) {
-            var itemsRemove = cartList.querySelectorAll(".js-item-remove");
-        }
-        // Xử lý removeFromCart
-        console.log(itemsRemove);
-        itemsRemove.forEach((itemRemove) => {
-            itemRemove.addEventListener("click", () => {
-                itemRemove.parentElement.style.display = "none";
-                cart.forEach((item) => {
-                    if (
-                        itemRemove.parentElement.dataset.productId ===
-                        item.productId
-                    ) {
-                        console.log(totalPrice);
-                        matchingItem = findMatchingItem(
-                            products,
-                            item.productId
-                        );
-                        totalPrice -= item.quantity * matchingItem.currentPrice;
-                        cartCtaPrice.innerHTML = `${(totalPrice / 1000).toFixed(
-                            3
-                        )}&nbspVNĐ`;
-                        // Xoa item khoi cart array
-                        cart = cart.filter((i) => i !== item);
-                        // console.log(cart);
-                    }
-                    // con bug
-                    if (cart.length !== 0) {
-                        cartList.classList.remove("cart-list--no-cart");
-                    } else {
-                        cartCta.style.display = "none";
-                        cartList.classList.add("cart-list--no-cart");
-                    }
-                    genCartQty();
-                });
-            });
-        });
+        findCart(productId);
+        genTotalPrice();
+        removeFromCart();
     });
 });
