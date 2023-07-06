@@ -1114,3 +1114,115 @@ a {
 .knowledge .slider .slick-dots .slick-active button {
     background-color: #000;
 }
+
+/* ==================== Contact =======================*/
+.contact {
+    padding: 50px 0 70px;
+    background-color: rgb(253, 246, 240);
+}
+
+.contact .row {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.contact .title {
+    color: var(--primary-color);
+    font-family: "Exo 2", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.contact .contact-form,
+.contact .map-area {
+    margin-top: 50px;
+}
+
+/* ==================== Footer =======================*/
+.footer {
+}
+
+.footer .footer-1st {
+    padding: 40px 0 90px;
+    background: url(../img/bg-footer-h2.png) center / cover no-repeat;
+    background-color: rgb(26, 87, 72);
+}
+
+.footer-1st .row {
+    display: flex;
+    /* align-items: stretch; */
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.footer-1st .about-us {
+    flex: 1.5;
+}
+
+.footer-1st .qr-code,
+.footer-1st .fanpage {
+    flex: 1;
+}
+
+.footer-1st .title-main {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 3.8px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-1st .title-main span {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+/* #6d948a */
+
+.footer-1st .about-us .title,
+.footer-1st .about-us .icon-info,
+.footer-1st .about-us .icon-info a {
+    color: #fff;
+}
+
+.footer-1st .about-us .title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.footer-1st .about-us .icon-info li {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+.footer-1st .about-us .icon-info i {
+    margin-right: 8px;
+}
+
+.footer-1st .about-us .icon-info strong {
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.footer-1st .body {
+    margin-top: 20px;
+}
+
+.footer-1st .qr-code .qr-code-img {
+    width: 183px;
+    height: 183px;
+    /* width: 100%; */
+    object-fit: cover;
+}
+
+.footer-2st {
+    height: 48px;
+    background-color: var(--background-color);
+}
+
+.footer-2st .desc {
+    text-align: center;
+    font-size: 1.44rem;
+    line-height: 48px;
+}
