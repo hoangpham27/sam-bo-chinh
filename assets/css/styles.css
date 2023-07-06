@@ -510,7 +510,7 @@ a {
 }
 
 .features .accordion-btn:first-child {
-    background-color: #f2f2f2;
+    background-color: var(--primary-color);
     color: #fff;
 }
 
@@ -730,4 +730,387 @@ a {
 .pictrues-videos .video-wrap iframe {
     width: 100%;
     height: 100%;
+}
+
+/* ==================== Newspaper ===================== */
+.newspaper {
+    padding: 30px 0;
+}
+
+.newspaper .title {
+    color: var(--primary-color);
+    font-family: "Exo 2", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.newspaper .slider {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newspaper .slider .slide {
+    position: relative;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.newspaper .slider .slide:hover .desc {
+    transition: 0.2s ease-in-out;
+    opacity: 0.6;
+}
+
+.newspaper .slider .body {
+    margin-top: 12px;
+    color: #000;
+}
+
+.newspaper .slider .sub-title {
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.656rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.newspaper .slider .desc {
+    position: relative;
+
+    margin-top: 16px;
+    font-size: 1.44rem;
+    line-height: 1.6;
+}
+
+.newspaper .slider .desc::before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #efefef;
+}
+
+.newspaper img {
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+}
+
+.newspaper .slider .slide .date {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 44px;
+    height: 44px;
+    top: 10%;
+    left: -2%;
+    background-color: #fff;
+    border: 2px var(--primary-color) solid;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.newspaper .slider .slide:hover .date {
+    transition: 0.2s ease-in-out;
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.newspaper .slider .date span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.newspaper .slider .slick-arrow {
+    position: absolute;
+    display: none !important;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: #fff;
+    opacity: 0.6;
+    padding: 175px 10px;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.newspaper .slider .slick-arrow i {
+    font-size: 2rem;
+}
+
+.newspaper .slider:hover .slick-arrow {
+    display: block !important;
+}
+
+.newspaper .slider .slick-prev {
+    left: 0;
+}
+
+.newspaper .slider .slick-next {
+    right: 0;
+}
+
+/* ===================== Customer review ====================*/
+.customer-reviews {
+    background: center / cover no-repeat;
+    background-image: linear-gradient(
+            to bottom,
+            rgba(245, 245, 245, 0.6) 0%,
+            rgba(250, 250, 250, 0.6) 100%
+        ),
+        url(../img/customer/customer-review.jpg);
+    padding: 40px 0 80px;
+}
+
+.customer-reviews .title {
+    color: var(--primary-color);
+    font-family: "Exo 2", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.customer-reviews .feedback {
+    text-align: center;
+}
+
+.customer-reviews .feedback-body {
+    margin-top: 140px;
+}
+
+.customer-reviews .feedback-img {
+    margin: 25px auto 0;
+}
+
+.customer-reviews .feedback-img img {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.customer-reviews .feedback .feedback-content {
+    display: block;
+    width: 750px;
+    max-width: 100%;
+    margin: auto;
+    font-size: 14px;
+    color: #333;
+}
+
+.customer-reviews .feedback p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-style: italic;
+    color: #000;
+}
+
+.customer-reviews .feedback .customer {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.6rem;
+}
+
+.customer-reviews .customer .name {
+    font-weight: 700;
+}
+.customer-reviews .customer .company {
+    margin-top: 10px;
+    padding: 2px 0;
+}
+
+.slick-arrow-feedback {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    opacity: 0.6;
+    padding: 20px;
+    font-size: 2rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.slick-arrow-feedback:hover {
+    color: var(--primary-color);
+}
+
+.customer-reviews .feedback-body .slick-prev {
+    left: 0;
+}
+
+.customer-reviews .feedback-body .slick-next {
+    right: 0;
+}
+
+/*========================== Knowledge =========================*/
+.knowledge {
+    padding: 30px 0 90px;
+}
+
+.knowledge .title {
+    color: var(--primary-color);
+    font-family: "Exo 2", sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.knowledge .slider {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.knowledge .slider .slide {
+    position: relative;
+    flex: 1;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.knowledge .slider .slide:hover .desc {
+    transition: 0.2s ease-in-out;
+    opacity: 0.6;
+}
+
+.knowledge .slider .body {
+    margin-top: 12px;
+    color: #000;
+}
+
+.knowledge .slider .sub-title {
+    font-family: "Exo 2", sans-serif;
+    font-size: 1.656rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.knowledge .slider .desc {
+    position: relative;
+    margin-top: 16px;
+    font-size: 1.44rem;
+    line-height: 1.6;
+}
+
+.knowledge .slider .desc::before {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #efefef;
+}
+
+.knowledge img {
+    width: 100%;
+    height: 227px;
+    object-fit: cover;
+}
+
+.knowledge .slider .slide .date {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 44px;
+    height: 44px;
+    top: 10%;
+    left: -2%;
+    background-color: #fff;
+    border: 2px var(--primary-color) solid;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.knowledge .slider .slide:hover .date {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.knowledge .slider .date span {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.knowledge .slider .slick-arrow {
+    position: absolute;
+    display: none !important;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    width: 36px;
+    height: 36px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+}
+
+.knowledge .slider .slick-arrow:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+}
+
+.knowledge .slider .slick-arrow i {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.knowledge .slider:hover .slick-arrow {
+    display: block !important;
+}
+
+.knowledge .slider .slick-prev {
+    left: -15px;
+}
+
+.knowledge .slider .slick-next {
+    right: -15px;
+}
+
+.knowledge .slider .slick-dots {
+    position: absolute;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    column-gap: 12px;
+}
+
+.knowledge .slider .slick-dots button {
+    font-size: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+}
+
+.knowledge .slider .slick-dots .slick-active button {
+    background-color: #000;
 }

@@ -30,7 +30,7 @@ function togglePanel() {
         panel.style.maxHeight = panel.scrollHeight + "px";
         panel.style.border = "1px dashed #ddd";
         Object.assign(this.style, {
-            backgroundColor: "#f2f2f2",
+            backgroundColor: "var(--primary-color)",
             color: "#fff",
         });
     } else {
@@ -312,5 +312,52 @@ $(document).ready(function () {
                 return element.find("img");
             },
         },
+    });
+});
+
+// handle newspapers slider
+$(document).ready(function () {
+    $(".newspaper .slider").slick({
+        draggable: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: true,
+        prevArrow:
+            "<button type='button' class='slick-prev slick-arrow-newspaper'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:
+            "<button type='button' class='slick-next slick-arrow-newspaper'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+    });
+});
+
+// handle customer review slider
+$(document).ready(function () {
+    $(".customer-reviews .feedback-body").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        prevArrow:
+            "<button type='button' class='slick-prev slick-arrow-feedback'><i class='fa-solid fa-angle-left'></i></button>",
+        nextArrow:
+            "<button type='button' class='slick-next slick-arrow-feedback'><i class='fa-solid fa-angle-right'></i></button>",
+    });
+});
+
+// handle knowledge slider
+$(document).ready(function () {
+    $(".knowledge .slider").slick({
+        draggable: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: true,
+        dots: true,
+        prevArrow:
+            "<button type='button' class='slick-prev slick-arrow-knowledge'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+        nextArrow:
+            "<button type='button' class='slick-next slick-arrow-knowledge'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
     });
 });
