@@ -760,7 +760,6 @@ a {
 }
 
 .newspaper .slider .slide:hover .desc {
-    transition: 0.2s ease-in-out;
     opacity: 0.6;
 }
 
@@ -778,10 +777,10 @@ a {
 
 .newspaper .slider .desc {
     position: relative;
-
     margin-top: 16px;
     font-size: 1.44rem;
     line-height: 1.6;
+    transition: 0.2s ease-in-out;
 }
 
 .newspaper .slider .desc::before {
@@ -816,10 +815,10 @@ a {
     font-size: 1.6rem;
     font-weight: 700;
     cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
 .newspaper .slider .slide:hover .date {
-    transition: 0.2s ease-in-out;
     background-color: var(--primary-color);
     color: #fff;
 }
@@ -941,6 +940,7 @@ a {
     padding: 20px;
     font-size: 2rem;
     z-index: 2;
+    transition: 0.2s ease-in-out;
     cursor: pointer;
 }
 
@@ -984,7 +984,6 @@ a {
 }
 
 .knowledge .slider .slide:hover .desc {
-    transition: 0.2s ease-in-out;
     opacity: 0.6;
 }
 
@@ -1005,6 +1004,7 @@ a {
     margin-top: 16px;
     font-size: 1.44rem;
     line-height: 1.6;
+    transition: 0.2s ease-in-out;
 }
 
 .knowledge .slider .desc::before {
@@ -1180,6 +1180,11 @@ a {
 }
 /* #6d948a */
 
+.footer-1st .body {
+    margin-top: 20px;
+    opacity: 0.9;
+}
+
 .footer-1st .about-us .title,
 .footer-1st .about-us .icon-info,
 .footer-1st .about-us .icon-info a {
@@ -1191,22 +1196,22 @@ a {
     font-weight: 700;
 }
 
+.footer-1st .about-us .icon-info i {
+    margin-right: 8px;
+}
+
 .footer-1st .about-us .icon-info li {
     margin-top: 10px;
     font-size: 1.6rem;
     line-height: 1.6;
 }
-.footer-1st .about-us .icon-info i {
-    margin-right: 8px;
+
+.footer-1st .about-us .icon-info li:hover a {
+    opacity: 1;
 }
 
 .footer-1st .about-us .icon-info strong {
     font-weight: 700;
-    opacity: 0.9;
-}
-
-.footer-1st .body {
-    margin-top: 20px;
 }
 
 .footer-1st .qr-code .qr-code-img {
@@ -1225,4 +1230,62 @@ a {
     text-align: center;
     font-size: 1.44rem;
     line-height: 48px;
+}
+
+/* ===================== introduce.html ======================= */
+#introduce .wrapper {
+    margin: 40px 0 55px;
+}
+
+#introduce .main-img img {
+    width: 100%;
+    display: block;
+}
+
+#introduce .wrapper .title {
+    font-size: 2.72rem;
+    font-weight: 700;
+    font-family: "Exo 2", sans-serif;
+    text-align: center;
+}
+
+#introduce .wrapper .desc {
+    margin-top: 30px;
+    text-align: justify;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+#introduce figure {
+    width: 800px;
+    margin: 30px auto;
+}
+
+#introduce figure img {
+    display: block;
+}
+
+#introduce figure figcaption {
+    font-size: 1.44rem;
+    font-style: italic;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    line-height: 1.6;
+    padding: 6px;
+}
+
+#introduce .sub-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#introduce .order-list {
+    margin: 30px 0 0 25px;
+    list-style: auto;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+#introduce .un-list {
+    list-style: "– ";
 }

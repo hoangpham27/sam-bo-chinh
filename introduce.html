@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Giới thiệu - Sâm Bố Chính Hoàng Gia</title>
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="./assets/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="./assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="./assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="./assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="./assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="./assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="./assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="./assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="./assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="./assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="content">
+                <nav class="navbar">
+                    <!-- Logo -->
+                    <a href="/" class="logo">
+                        <img
+                            src="./assets/img/logo-sbc.png"
+                            alt="Sâm bố chính hoàng gia"
+                            width="64"
+                            height="64"
+                        />
+                    </a>
+                    <!-- Navigation -->
+                    <ul class="navigation">
+                        <li>
+                            <a href="/">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="#">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="#">Sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="#">Chứng nhận - Công bố</a>
+                        </li>
+                        <li>
+                            <a href="#">Kiến thức</a>
+                        </li>
+                        <li>
+                            <a href="#">Báo chí</a>
+                        </li>
+                        <li>
+                            <a href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <!-- Cart Layout -->
+                    <div class="header-cart">
+                        <div class="header-cart-wrap">
+                            <a href="#" class="btn">
+                                <span class="cart-title">Giỏ hàng</span>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span
+                                    class="cart-quantity js-cart-quantity"
+                                    data-testid="cart-quantity"
+                                    >0</span
+                                >
+                            </a>
+                            <!-- No cart: cart-list--no-cart and msg: display none-->
+                            <div class="cart-list js-cart-list">
+                                <p class="msg">
+                                    Chưa có sản phẩm trong giỏ hàng.
+                                </p>
+                                <!-- Cart item -->
+                                <ul class="cart-list-items js-cart-list-items">
+                                    <!-- <li class="cart-item">
+                                       
+                                        <a href="#!" class="cart-item-wrap">
+                                            <img
+                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
+                                                alt=""
+                                                class="img"
+                                            />
+                                        </a>
+                                        <div class="cart-item-info">
+                                            <a href="" class="item-name"
+                                                >Bồ Câu tần sâm Bố Chính</a
+                                            >
+                                            <div class="item-quantity-price">
+                                                <span class="item-quantity"
+                                                    >1 ×
+                                                </span>
+                                                <span class="item-price"
+                                                    >125000 VNĐ</span
+                                                >
+                                            </div>
+                                        </div>
+
+                                        <span class="item-remove">
+                                            <i
+                                                class="fa-regular fa-circle-xmark"
+                                            ></i>
+                                        </span>
+                                    </li>
+                                    <li class="cart-item">
+                                      
+                                        <a href="#!" class="cart-item-wrap">
+                                            <img
+                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
+                                                alt=""
+                                                class="img"
+                                            />
+                                        </a>
+                                        <div class="cart-item-info">
+                                            <a href="" class="item-name"
+                                                >Bồ Câu tần sâm Bố Chính</a
+                                            >
+                                            <div class="item-quantity-price">
+                                                <span class="item-quantity"
+                                                    >1 ×</span
+                                                >
+                                                <span class="item-price"
+                                                    >125000&nbspVNĐ</span
+                                                >
+                                            </div>
+                                        </div>
+
+                                        <span class="item-remove">
+                                            <i
+                                                class="fa-regular fa-circle-xmark"
+                                            ></i>
+                                        </span>
+                                    </li> -->
+                                </ul>
+                                <div class="cart-cta js-cart-cta">
+                                    <p class="total-price">
+                                        <strong>Tổng số phụ:</strong>
+                                        <span></span>
+                                    </p>
+                                    <div class="cart-pay-btns">
+                                        <a href="#!" class="btn cart-btn"
+                                            >Xem Giỏ hàng</a
+                                        >
+                                        <a href="#!" class="btn pay-btn"
+                                            >Thanh toán</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main" id="introduce">
+            <div class="main-img">
+                <img
+                    src="./assets/img/bannersbc-2048x731.jpg"
+                    alt="Banner Sâm Bố Chính Hoàng Gia"
+                />
+            </div>
+            <div class="content">
+                <div class="wrapper">
+                    <h1 class="title">GIỚI THIỆU VỀ SÂM BỐ CHÍNH HOÀNG GIA</h1>
+                    <p class="desc">
+                        Là một loài nhân sâm quý, được người Chăm phát hiện ở
+                        Châu Bố Chính ( nay là huyện Bố Trạch và Quảng Trạch
+                        thuộc huyện Quảng Bình) cách đây hơn 300 năm. Là sản vật
+                        tiến vua từ thời Vua Lê Chúa Trịnh. Tuy nhiên, loài sâm
+                        quý này đã bị thất truyền khỏi nơi xuất sứ một thời gian
+                        dài. Đến năm 2017, người dân Quảng Bình đã nghiên cứu và
+                        bắt đầu khôi phục giống cây sâm bố chính. Đến năm 2019
+                        giống cây này đã được trồng thành công và những củ sâm
+                        Bố Chính chính thức được đưa ra thị trường. Tiếp nối
+                        hành trình,Công ty TNHH SBC HOÀNG GIA đã phát triển và
+                        lan tỏa giá trị dinh dưỡng của cây sâm bố chính đến với
+                        cộng đồng thông qua bộ sản phẩm: Sâm tươi, Sâm Khô cắt
+                        lát, Bột sâm, Sâm tươi ngâm mật ong, Rượu sâm, Mứt Sâm,
+                        Xà phòng sâm…
+                    </p>
+                    <figure>
+                        <img
+                            src="./assets/img/introduce.jpg"
+                            alt="Sâm Bố Chính ngâm mật ong"
+                            style="width: 100%"
+                        />
+                        <figcaption>Sâm Bố Chính ngâm mật ong</figcaption>
+                    </figure>
+                    <h2 class="sub-title">Công dụng của Sâm Bố Chính</h2>
+                    <ol class="order-list">
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Tăng cường sức khỏe:
+                                <li>
+                                    <p>
+                                        Tăng sức đề kháng miễn dịch cho cơ thể
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Phục hồi sức khỏe sau sinh, sau chữa
+                                        bệnh và phẫu thuật
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            Hỗ trợ điều trị ung thư:
+                            <ul class="un-list">
+                                <li>
+                                    <p>
+                                        Hạn chế sự phát triển của tế bào ung thư
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Tăng cường sinh lý
+                                <li>
+                                    <p>
+                                        Cải thiện khả năng sinh lý, tăng cường
+                                        chất lượng tình dục cho cả nam và nữ
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Giúp kích thích hoạt động của não bộ lên
+                                        tuyến yên, tăng sản xuất nội tiết tố
+                                        sinh dục
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Chống lão hóa
+                                <li>
+                                    <p>
+                                        Làm đẹp da, ngăn ngừa và cải thiện nếp
+                                        nhăn
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Chất saponin có tác dụng ức chế sự hình
+                                        thành MDA giúp chống oxy hóa, làm chậm
+                                        quá trình lão hóa
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Hỗ trợ điều trị bệnh tiểu đường:
+                                <li>
+                                    <p>Hỗ trợ điều tiết đường huyết</p>
+                                </li>
+                                <li>
+                                    <p>Giúp đề kháng với insulin</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Hỗ trợ hệ tiêu hóa
+                                <li>
+                                    <p>Hỗ trợ điều trị bệnh dạ dày</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Hỗ trợ hệ hô hấp:
+                                <li>
+                                    <p>Giúp bảo vệ họng, kháng viêm</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Giúp tiêu diệt vi khuẩn Streptococcus
+                                        gây viêm họng Giảm ho, trừ đờm và ngăn
+                                        ngừa các chứng ho, sốt nóng
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Giảm ho, trừ đờm và ngăn ngừa các chứng
+                                        ho, sốt nóng
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Hỗ trợ tâm lý:
+                                <li>
+                                    <p>Cải thiện tâm lý</p>
+                                </li>
+                                <li>
+                                    <p>Ngăn ngừa lo âu, trầm cảm, mệt mỏi</p>
+                                </li>
+                                <li>
+                                    <p>Chống mất ngủ</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Hỗ trợ xương khớp
+                                <li>
+                                    <p>
+                                        Bổ sung lượng canxi và chất nhầy cho
+                                        khớp
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Thanh lọc cơ thể
+                                <li>
+                                    <p>Giúp đào thải chất độc và mầm bệnh</p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Hỗ trợ điều trị gan, thận, phổi, thị lực
+                                <li>
+                                    <p>
+                                        Tăng cường và phục hồi các chức năng
+                                        gan, thận , phổi, thị lực
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Ngăn ngừa trầm cảm, mệt mỏi, mất ngủ,
+                                        cái thiện tâm lý
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item">
+                            <ul class="un-list">
+                                Hỗ trợ điều trị chứng chán ăn ở trẻ em
+                                <li>
+                                    <p>
+                                        Giúp trẻ cải thiện chứng biếng ăn, suy
+                                        dược
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-1st">
+                <div class="content">
+                    <div class="row">
+                        <div class="about-us">
+                            <h3 class="title-main">
+                                <span>Về chúng tôi</span>
+                            </h3>
+                            <div class="body">
+                                <h3 class="title">
+                                    Công Ty TNHH SBC Hoàng Gia
+                                </h3>
+                                <ul class="icon-info">
+                                    <li>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <strong
+                                            >Địa chỉ Công Ty và
+                                            Showroom:</strong
+                                        >
+                                        kiệt 126/30 Phạm Văn Đồng, Phường Vỹ Dạ,
+                                        Thành Phố Huế, Tỉnh Thừa Thiên Huế
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-phone"></i>
+                                        <strong>Hotline:</strong
+                                        ><a href="tel:+4733378901">
+                                            0934.830.357</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <strong>Email:</strong
+                                        ><a
+                                            href="mailto:sambochinhhoanggia@gmail.com"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            sambochinhhoanggia@gmail.com</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-certificate"></i>
+                                        <strong>Youtube:</strong
+                                        ><a
+                                            href="https://www.youtube.com/channel/UC2KPKRzZW2VL30zSXlj2UdA"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            Sâm Bố Chính HOÀNG GIA</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="qr-code">
+                            <h3 class="title-main">
+                                <span>Quét mã QR Code</span>
+                            </h3>
+                            <div class="body">
+                                <img
+                                    src="./assets/img/qr-code.jpg"
+                                    alt=""
+                                    class="qr-code-img"
+                                />
+                            </div>
+                        </div>
+                        <div class="fanpage">
+                            <h3 class="title-main"><span>Fanpage</span></h3>
+                            <div class="body">
+                                <iframe
+                                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSBChoanggia&amp;tabs=timeline&amp;width=320&amp;height=200&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
+                                    width="320"
+                                    height="200"
+                                    style="border: none; overflow: hidden"
+                                    scrolling="no"
+                                    frameborder="0"
+                                    allowfullscreen="true"
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-2st">
+                <p class="desc">Thiết kế web tại Huế - Eaglemedia.vn</p>
+            </div>
+        </footer>
+        <script type="module" src="./assets/scripts/cart.js"></script>
+    </body>
+</html>
