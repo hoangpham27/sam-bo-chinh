@@ -574,12 +574,14 @@ a {
     grid-template-columns: repeat(4, 1fr);
 }
 
-.products .product {
+.products .product,
+#products .product {
     position: relative;
     /* outline: 9px solid #fff; */
     border: 1px solid #e8e8e8;
     /* Do padding nên grid item sẽ chòi ra grid layout */
     padding: 9px;
+    animation: fadeIn linear 0.48s;
 }
 
 .product .product-img {
@@ -1288,4 +1290,87 @@ a {
 
 #introduce .un-list {
     list-style: "– ";
+}
+
+/* ========================== products.html ============================ */
+#products {
+    margin-top: 35px;
+    text-align: center;
+}
+
+#products .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+#products .breadcrumb {
+    text-transform: uppercase;
+    font-size: 1.28rem;
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+#products .breadcrumb a {
+    color: rgba(102, 102, 102, 0.7);
+    font-weight: 500;
+}
+
+#products .breadcrumb a:hover {
+    color: #111;
+}
+
+#products .result-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#products .orderby {
+    margin-left: 20px;
+    padding: 10px 18px 10px 10px;
+    font-size: 1.552rem;
+    text-align: left;
+    background-color: #fcfcfc;
+    box-shadow: #858080 1px 1px 6px 0px;
+    outline: none;
+}
+
+#products .pagination {
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#products .pagination li {
+    margin: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    animation: fadeIn linear 0.48s;
+}
+
+#products .pagination .active {
+    pointer-events: none;
+}
+
+#products .pagination li:hover,
+#products .pagination .active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
 }

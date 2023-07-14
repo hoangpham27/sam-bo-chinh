@@ -1,13 +1,8 @@
-import products from "./products.js";
+import products from "./productsData.js";
 
-import {
-    formatCurrencyVND,
-    genCartQty,
-    genTotalPrice,
-    findCart,
-    removeFromCart,
-    cart,
-} from "./cart.js";
+import { genLayoutProducts } from "./constant.js";
+
+import { addToCart } from "./cart.js";
 
 // handle main-slider
 $(document).ready(function () {
@@ -84,7 +79,7 @@ for (const accBtn of accBtns) {
 
 // handle products-layout
 
-const productsLayout = document.querySelector(".products-layout");
+// const productsLayout = document.querySelector(".products-layout");
 
 // Chạy 8 ông: Tạo 1 mảng, đưa vô chủ 8 ông rồi log => đúng thì đưa vô map
 
@@ -96,59 +91,9 @@ for (let i = 0; i < products.length; i++) {
 }
 // (() => {})();
 
-// Generator layout code
-const productsData = product8s.map((product) => {
-    let flag = false;
-    if (product.currentPrice === product.oldPrice) flag = true;
-    return `<div class="product ${product.id}">
-        <a href="#!"  class="product-img" >
-            <img src="${product.image}" alt="${product.name}">
-        </a>
-        <a href="#!" class="product-name">${product.name}</a>
-        <div class="product-price-cart">
-            <div class="product-sale">
-                <span class="${flag ? "product--not-sale" : "product--sale"}">
-                    ${flag ? "" : formatCurrencyVND(product.oldPrice)}
-                </span>
-                <span class="product-price">
-                    ${formatCurrencyVND(product.currentPrice)}
-                </span>
-            </div>
+genLayoutProducts(product8s);
 
-            <a href="#!" class="btn product-cart-btn js-add-to-cart"  data-product-id="${
-                product.id
-            }">Thêm vào giỏ hàng</a>
-        </div>
-        <span class="${flag ? "product--not-sale-tag" : "product--sale-tag"}">
-            ${flag ? "" : "Giảm giá!"}
-        </span>
-    </div>`;
-});
-productsLayout.innerHTML = productsData.join("");
-
-const productList = productsLayout.querySelectorAll(".product");
-productList.forEach((product) => {
-    const btn = product.querySelector(".js-add-to-cart");
-    btn.addEventListener("click", () => {
-        const productId = btn.dataset.productId;
-        // find item in storage
-        const itemCartStorage = cart.find(
-            (item) => item.productId === productId
-        );
-        // Update in cart
-        if (!itemCartStorage) {
-            cart.push({
-                productId,
-                quantity: 1,
-            });
-        } else itemCartStorage.quantity += 1;
-        localStorage.setItem("cart", JSON.stringify(cart));
-        genCartQty();
-        findCart(productId);
-        genTotalPrice();
-        removeFromCart();
-    });
-});
+addToCart();
 
 // Lightbox gallery
 $(document).ready(function () {

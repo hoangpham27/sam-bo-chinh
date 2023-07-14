@@ -1,15 +1,7 @@
-import products from "./products.js";
+import products from "./productsData.js";
+import { formatCurrencyVND } from "./constant.js";
 
-// handle currencyVND
-export function formatCurrencyVND(amount) {
-    const VND = new Intl.NumberFormat("vi-VN", {
-        style: "currency",
-        currency: "VND",
-    });
-    return VND.format(amount).replace("₫", "VNĐ");
-}
-
-export function genCartQty() {
+function genCartQty() {
     var cartQty = 0;
     cart.forEach((item) => {
         cartQty += item.quantity;
@@ -17,7 +9,7 @@ export function genCartQty() {
     cartQuantity.innerHTML = cartQty;
 }
 
-export function genTotalPrice() {
+function genTotalPrice() {
     var totalPrice = 0;
     carts.forEach((cartsItem) => {
         totalPrice += cartsItem.productQuantity * cartsItem.currentPrice;
@@ -26,7 +18,7 @@ export function genTotalPrice() {
 }
 
 // Upadte in carts
-export function findCart(productId) {
+function findCart(productId) {
     // Find product in products
     const productItem = products.find((product) => product.id === productId);
     // Find item.qty in cart
@@ -91,7 +83,7 @@ function renderCart() {
 }
 
 // Write this function because it use for the first load page and after addToCart
-export function removeFromCart() {
+function removeFromCart() {
     if (cart.length && carts.length > 0) {
         var itemsRemove = cartListItems.querySelectorAll(".js-item-remove");
         // handle removeFromCart
@@ -148,4 +140,30 @@ if (cart.length && carts.length > 0) {
     removeFromCart();
 } else {
     cartList.classList.add("cart-list--no-cart");
+}
+
+export function addToCart() {
+    const productList = document.querySelectorAll(".product");
+    productList.forEach((product) => {
+        const btn = product.querySelector(".js-add-to-cart");
+        btn.addEventListener("click", () => {
+            const productId = btn.dataset.productId;
+            // find item in storage
+            const itemCartStorage = cart.find(
+                (item) => item.productId === productId
+            );
+            // Update in cart
+            if (!itemCartStorage) {
+                cart.push({
+                    productId,
+                    quantity: 1,
+                });
+            } else itemCartStorage.quantity += 1;
+            localStorage.setItem("cart", JSON.stringify(cart));
+            genCartQty();
+            findCart(productId);
+            genTotalPrice();
+            removeFromCart();
+        });
+    });
 }
