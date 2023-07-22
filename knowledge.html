@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kiến thức - Công bố - Sâm Bố Chính Hoàng Gia</title>
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="./assets/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="./assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="./assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="./assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="./assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="./assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="./assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="./assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="./assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="./assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="stylesheet" href="./assets/css/reset.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+    </head>
+    <body>
+        <header class="header">
+            <div class="content">
+                <nav class="navbar">
+                    <!-- Logo -->
+                    <a href="./index.html" class="logo">
+                        <img
+                            src="./assets/img/logo-sbc.png"
+                            alt="Sâm bố chính hoàng gia"
+                            width="64"
+                            height="64"
+                        />
+                    </a>
+                    <!-- Navigation -->
+                    <ul class="navigation">
+                        <li>
+                            <a href="./index.html">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="./introduce.html">Giới thiệu</a>
+                        </li>
+                        <li>
+                            <a href="./products.html">Sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="./cer-ann.html">Chứng nhận - Công bố</a>
+                        </li>
+                        <li>
+                            <a href="#">Kiến thức</a>
+                        </li>
+                        <li>
+                            <a href="#">Báo chí</a>
+                        </li>
+                        <li>
+                            <a href="#">Liên hệ</a>
+                        </li>
+                    </ul>
+                    <!-- Cart Layout -->
+                    <div class="header-cart">
+                        <div class="header-cart-wrap">
+                            <a href="#" class="btn">
+                                <span class="cart-title">Giỏ hàng</span>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span
+                                    class="cart-quantity js-cart-quantity"
+                                    data-testid="cart-quantity"
+                                    >0</span
+                                >
+                            </a>
+                            <!-- No cart: cart-list--no-cart and msg: display none-->
+                            <div class="cart-list js-cart-list">
+                                <p class="msg">
+                                    Chưa có sản phẩm trong giỏ hàng.
+                                </p>
+                                <!-- Cart aside-item -->
+                                <ul
+                                    class="cart-list-items js-cart-list-items"
+                                ></ul>
+                                <div class="cart-cta js-cart-cta">
+                                    <p class="total-price">
+                                        <strong>Tổng số phụ:</strong>
+                                        <span></span>
+                                    </p>
+                                    <div class="cart-pay-btns">
+                                        <a href="#!" class="btn cart-btn"
+                                            >Xem Giỏ hàng</a
+                                        >
+                                        <a href="#!" class="btn pay-btn"
+                                            >Thanh toán</a
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main" id="knowledge">
+            <div class="content">
+                <h1 class="title">Kiến thức</h1>
+                <div class="row row-knowledge">
+                    <div class="knowledge-list">
+                        <div class="knowledge-layout">
+                            <div class="item">
+                                <a href="#!" class="entry-image">
+                                    <img
+                                        src="./assets/img/knowledge/bot-sam-cua-sbc-hoang-gia.jpg"
+                                        alt="BỘT SÂM CỦA SBC HOÀNG GIA"
+                                    />
+                                </a>
+                                <div class="entry-content">
+                                    <h2 class="entry-title">
+                                        <a href="#!"
+                                            >BỘT SÂM CỦA SBC HOÀNG GIA</a
+                                        >
+                                    </h2>
+                                    <p class="desc">
+                                        TRONG BẾP NHÀ BẠN NHẤT ĐỊNH PHẢI CÓ 1 HỦ
+                                        BỘT SÂM CỦA SBC HOÀNG GIA Cùng Chef Jane
+                                        Nguyen vào bếp thực hiện món “ Chả Chay”
+                                        dinh dưỡng và siêu ngon cả nhà nhé.! Xin
+                                        được chia sẻ với cả nhà 1 xíu ạ..! BỘT
+                                        SÂM BỐ CHÍNH 1. Thành phần: 100% Củ
+                                    </p>
+                                    <div class="entry-meta-cta">
+                                        <div class="entry-meta">
+                                            <span class="posted-on">
+                                                <i
+                                                    class="fa-regular fa-clock"
+                                                ></i>
+                                                POSTED ON 13/07/2023
+                                            </span>
+                                            <span class="byline">
+                                                <i
+                                                    class="fa-regular fa-user"
+                                                ></i>
+                                                By Vu
+                                            </span>
+                                        </div>
+                                        <a href="#!" class="btn knowlege-btn"
+                                            >Xem thêm
+                                            <i
+                                                class="fa-solid fa-arrow-right-long"
+                                            ></i
+                                        ></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <a href="#!" class="entry-image">
+                                    <img
+                                        src="./assets/img/knowledge/am-thuc-hue-gia-tri-va-thong-diep.jpg"
+                                        alt="BỘT SÂM CỦA SBC HOÀNG GIA"
+                                    />
+                                </a>
+                                <div class="entry-content">
+                                    <h2 class="entry-title">
+                                        <a href="#!"
+                                            >BỘT SÂM CỦA SBC HOÀNG GIA</a
+                                        >
+                                    </h2>
+                                    <p class="desc">
+                                        TRONG BẾP NHÀ BẠN NHẤT ĐỊNH PHẢI CÓ 1 HỦ
+                                        BỘT SÂM CỦA SBC HOÀNG GIA Cùng Chef Jane
+                                        Nguyen vào bếp thực hiện món “ Chả Chay”
+                                        dinh dưỡng và siêu ngon cả nhà nhé.! Xin
+                                        được chia sẻ với cả nhà 1 xíu ạ..! BỘT
+                                        SÂM BỐ CHÍNH 1. Thành phần: 100% Củ
+                                    </p>
+                                    <div class="entry-meta-cta">
+                                        <div class="entry-meta">
+                                            <span class="posted-on">
+                                                <i
+                                                    class="fa-regular fa-clock"
+                                                ></i>
+                                                POSTED ON 13/07/2023
+                                            </span>
+                                            <span class="byline">
+                                                <i
+                                                    class="fa-regular fa-user"
+                                                ></i>
+                                                By Vu
+                                            </span>
+                                        </div>
+                                        <a href="#!" class="btn">Xem thêm</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="pagination"></ul>
+                    </div>
+                    <div class="post-sidebar">
+                        <aside class="search-action search-action--no-result">
+                            <input
+                                type="search"
+                                class="search-field"
+                                name="q"
+                                placeholder="Tìm kiếm…"
+                            />
+                            <button type="submit" class="btn-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                            <div class="search-result">
+                                <p class="msg-no-result">Không có thông tin.</p>
+                                <ul class="search-result-list">
+                                    <!-- <li class="item-result">
+                                        <a href="#!" class="result-link">
+                                            <img
+                                                class="result-image"
+                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
+                                                alt=""
+                                                2
+                                            />
+                                            <p class="result-name">Ga ac</p>
+                                        </a>
+                                    </li>
+                                    <li class="item-result">
+                                        <a href="#!" class="result-link">
+                                            <img
+                                                class="result-image"
+                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
+                                                alt=""
+                                                2
+                                            />
+                                            <p class="result-name">Ga ac</p>
+                                        </a>
+                                    </li>
+                                    <li class="item-result">
+                                        <a href="#!" class="result-link">
+                                            <img
+                                                class="result-image"
+                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
+                                                alt=""
+                                                2
+                                            />
+                                            <p class="result-name">Ga ac</p>
+                                        </a>
+                                    </li> -->
+                                </ul>
+                            </div>
+                        </aside>
+                        <aside class="aside-sidebar recent-posts">
+                            <span class="aside-title"> Bài viết mới </span>
+                            <ul class="aside-list">
+                                <li class="aside-item">
+                                    <a href="#!">BỘT SÂM CỦA SBC HOÀNG GIA</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!"
+                                        >TÀU HỦ KIỂU SINGAPORE TỪ HẠT SEN – HOA
+                                        SÂM – TÁO ĐỎ</a
+                                    >
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!"
+                                        >NGHỆ NHÂN BẾP CHUYÊN NGHIỆP – NGHỆ NHÂN
+                                        ẨM THỰC ĐƯƠNG ĐẠI</a
+                                    >
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!"
+                                        >ẨM THỰC HUẾ _ GIÁ TRỊ VÀ THÔNG ĐIỆP</a
+                                    >
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">SÚP CHAY NGŨ SẮC</a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="aside-sidebar recent-comments">
+                            <span class="aside-title"> Phản hồi gần đây </span>
+                            <ul class="aside-list">
+                                <li class="aside-item">
+                                    <span class="author-link"
+                                        ><a href="#!">romantik69.co.il</a></span
+                                    >
+                                    trong
+                                    <span class="author-comment">
+                                        <a href="#!"
+                                            >Tinh thần thoải mái, bớt căng thẳng
+                                            nhờ có chè Sâm Bố Chính hạt sen</a
+                                        >
+                                    </span>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="aside-sidebar archives">
+                            <span class="aside-title">Lưu trữ</span>
+                            <ul class="aside-list">
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Bảy 2023</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Sáu 2023</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Năm 2023</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Tư 2023</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Ba 2023</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Hai 2023</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Mười 2022</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Tám 2022</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Tám 2022</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Tư 2022</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Tháng Mười Hai 2021</a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="aside-sidebar categories">
+                            <span class="aside-title">Chuyên mục</span>
+                            <ul class="aside-list">
+                                <li class="aside-item">
+                                    <a href="#!">Báo chí</a>
+                                </li>
+                                <li class="aside-item aside-item--active">
+                                    <a href="#!">Kiến thức</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">Sự kiện</a>
+                                </li>
+                            </ul>
+                        </aside>
+                        <aside class="aside-sidebar meta">
+                            <span class="aside-title">Đăng nhập</span>
+                            <ul class="aside-list">
+                                <li class="aside-item">
+                                    <a href="#!">RSS bài viết</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">RSS bài viết</a>
+                                </li>
+                                <li class="aside-item">
+                                    <a href="#!">WordPress.org</a>
+                                </li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-1st">
+                <div class="content">
+                    <div class="row">
+                        <div class="about-us">
+                            <h3 class="title-main">
+                                <span>Về chúng tôi</span>
+                            </h3>
+                            <div class="body">
+                                <h3 class="title">
+                                    Công Ty TNHH SBC Hoàng Gia
+                                </h3>
+                                <ul class="icon-info">
+                                    <li>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <strong
+                                            >Địa chỉ Công Ty và
+                                            Showroom:</strong
+                                        >
+                                        kiệt 126/30 Phạm Văn Đồng, Phường Vỹ Dạ,
+                                        Thành Phố Huế, Tỉnh Thừa Thiên Huế
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-phone"></i>
+                                        <strong>Hotline:</strong
+                                        ><a href="tel:+4733378901">
+                                            0934.830.357</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <strong>Email:</strong
+                                        ><a
+                                            href="mailto:sambochinhhoanggia@gmail.com"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            sambochinhhoanggia@gmail.com</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-certificate"></i>
+                                        <strong>Youtube:</strong
+                                        ><a
+                                            href="https://www.youtube.com/channel/UC2KPKRzZW2VL30zSXlj2UdA"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            Sâm Bố Chính HOÀNG GIA</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="qr-code">
+                            <h3 class="title-main">
+                                <span>Quét mã QR Code</span>
+                            </h3>
+                            <div class="body">
+                                <img
+                                    src="./assets/img/qr-code.jpg"
+                                    alt=""
+                                    class="qr-code-img"
+                                />
+                            </div>
+                        </div>
+                        <div class="fanpage">
+                            <h3 class="title-main"><span>Fanpage</span></h3>
+                            <div class="body">
+                                <iframe
+                                    src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSBChoanggia&amp;tabs=timeline&amp;width=320&amp;height=200&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true&amp;appId"
+                                    width="320"
+                                    height="200"
+                                    style="border: none; overflow: hidden"
+                                    scrolling="no"
+                                    frameborder="0"
+                                    allowfullscreen="true"
+                                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                                ></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-2st">
+                <p class="desc">Thiết kế web tại Huế - Eaglemedia.vn</p>
+            </div>
+        </footer>
+        <script type="module" src="./assets/scripts/cart.js"></script>
+        <script type="module" src="./assets/scripts/knowledge.js"></script>
+    </body>
+</html>
