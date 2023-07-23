@@ -1145,8 +1145,13 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .contact .row {
     display: flex;
-    align-items: stretch;
-    justify-content: space-between;
+    margin: 0 -15px;
+}
+
+.contact .contact-us,
+.contact .map {
+    padding: 0 15px;
+    flex: 1;
 }
 
 .contact .title {
