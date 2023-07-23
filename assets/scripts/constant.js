@@ -52,9 +52,9 @@ export function genLayoutProducts(productsArray) {
     productsLayout.innerHTML = productsData.join("");
 }
 
-export function genLayoutKnowledge(knowledgeArray) {
-    const knowledgeLayout = document.querySelector(".knowledge-layout");
-    const knowledgeData = knowledgeArray.map((item) => {
+export function genLayoutBlog(blogArray, layout) {
+    const blogLayout = document.querySelector(layout);
+    const blogData = blogArray.map((item) => {
         return `<div class="item ${item.id}">
         <a href="#!" class="entry-image">
             <img
@@ -86,7 +86,7 @@ export function genLayoutKnowledge(knowledgeArray) {
                         By Vu
                     </span>
                 </div>
-                <a href="#!" class="btn knowlege-btn"
+                <a href="#!" class="btn cta-btn"
                     >Xem thêm
                     <i
                         class="fa-solid fa-arrow-right-long"
@@ -96,7 +96,7 @@ export function genLayoutKnowledge(knowledgeArray) {
         </div>
     </div>`;
     });
-    knowledgeLayout.innerHTML = knowledgeData.join("");
+    blogLayout.innerHTML = blogData.join("");
 }
 
 export function pagination(get, limit, display) {
@@ -174,8 +174,8 @@ export function pagination(get, limit, display) {
     }
 }
 
-export function searchEngine(knowledge) {
-    let searchable = knowledge;
+export function searchEngine(blog) {
+    let searchable = blog;
 
     const searchAction = document.querySelector(".search-action");
     const searchField = document.querySelector(".search-field");

@@ -1,7 +1,7 @@
-import knowledge from "./knowledgeData.js";
+import newspaper from "./newspaperData.js";
 import { genLayoutBlog, pagination, searchEngine } from "./constant.js";
-
-genLayoutBlog(knowledge, ".blog-layout");
+console.log(newspaper);
+genLayoutBlog(newspaper, ".blog-layout");
 pagination(".item", 5, "flex");
 
 // const asideActive = document.querySelector(".aside-item--active");
@@ -10,4 +10,4 @@ pagination(".item", 5, "flex");
 //     e.preventDefault();
 // });
 
-searchEngine(knowledge);
+searchEngine(newspaper);
