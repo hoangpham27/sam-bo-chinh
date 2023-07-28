@@ -2,7 +2,10 @@ import products from "./productsData.js";
 import { genLayoutProducts, pagination } from "./constant.js";
 import { addToCart } from "./cart.js";
 genLayoutProducts(products);
-addToCart();
+addToCart(
+    document.querySelector(".js-cart-list-items"),
+    document.querySelector(".js-cart-list")
+);
 
 let orderBy = document.querySelector(".orderby");
 orderBy.addEventListener("change", () => {

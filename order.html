@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chứng nhận - Công bố - Sâm Bố Chính Hoàng Gia</title>
+        <title>Giỏ hàng - Sâm Bố Chính Hoàng Gia</title>
         <!-- Favicon -->
         <link
             rel="apple-touch-icon"
@@ -125,7 +125,7 @@
                             <a href="./products.html">Sản phẩm</a>
                         </li>
                         <li>
-                            <a href="#">Chứng nhận - Công bố</a>
+                            <a href="./cer-ann.html">Chứng nhận - Công bố</a>
                         </li>
                         <li>
                             <a href="./knowledge.html">Kiến thức</a>
@@ -140,7 +140,7 @@
                     <!-- Cart Layout -->
                     <div class="header-cart">
                         <div class="header-cart-wrap">
-                            <a href="./order.html" class="btn">
+                            <a href="#" class="btn">
                                 <span class="cart-title">Giỏ hàng</span>
                                 <i class="fa-solid fa-cart-shopping"></i>
                                 <span
@@ -164,9 +164,7 @@
                                         <span></span>
                                     </p>
                                     <div class="cart-pay-btns">
-                                        <a
-                                            href="./order.html"
-                                            class="btn cart-btn"
+                                        <a href="#!" class="btn cart-btn"
                                             >Xem Giỏ hàng</a
                                         >
                                         <a href="#!" class="btn pay-btn"
@@ -181,61 +179,89 @@
             </div>
         </header>
 
-        <main class="main" id="cer-ann">
+        <main class="main" id="order">
             <div class="content">
-                <h3 class="title">
-                    <strong>GIẤY CHỨNG NHẬN – CÔNG BỐ</strong>
-                </h3>
-                <div class="cer-ann-layout">
-                    <div class="item">
-                        <h4 class="sub-title">
-                            Giấy chứng nhận đăng ký doanh nghiệp
-                        </h4>
-                        <iframe
-                            src="./assets/pdf/giay-chung-nhan-dang-ky-doanh-nghiep.pdf"
-                            frameborder="0"
-                        ></iframe>
+                <h1 class="title">Giỏ hàng</h1>
+
+                <div class="row row-cart">
+                    <div class="back-to-products">
+                        <p class="msg">Chưa có sản phẩm trong giỏ hàng.</p>
+                        <a
+                            href="./products.html"
+                            class="btn btn-back-to-products"
+                            >Quay lại trang sản phẩm</a
+                        >
                     </div>
-                    <div class="item">
-                        <h4 class="sub-title">Từ bộ y tế viện dược liệu</h4>
-                        <iframe
-                            src="./assets/pdf/tu-bo-y-te-duoc-lieu.pdf"
-                            frameborder="0"
-                        ></iframe>
+                    <div class="cart-summary">
+                        <div class="cart-list-header">
+                            <span class="product-name">Sản phẩm</span>
+                            <span class="product-quantity-price"
+                                >Số lượng x Giá</span
+                            >
+                            <span class="product-subtotal">Tạm tính</span>
+                        </div>
+                        <ul class="order-cart-list-items"></ul>
+                        <a
+                            href="./products.html"
+                            class="btn btn-back-to-products"
+                            >Tiếp tục xem sản phẩm</a
+                        >
                     </div>
-                    <div class="item">
-                        <h4 class="sub-title">Từ trung tâm kiểm nghiệm TSL</h4>
-                        <iframe
-                            src="./assets/pdf/tu-trung-tam-kiem-nghiem-TSL.pdf"
-                            frameborder="0"
-                        ></iframe>
-                    </div>
-                    <div class="item">
-                        <h4 class="sub-title">
-                            Giấy chứng nhận CERTIFICATE (ATVSTP)
-                        </h4>
-                        <iframe
-                            src="./assets/pdf/giay-chung-nhan-AVTSTP.pdf"
-                            frameborder="0"
-                        ></iframe>
-                    </div>
-                    <div class="item">
-                        <h4 class="sub-title">
-                            Giấy chứng nhận CERTIFICATE (HACCP)
-                        </h4>
-                        <iframe
-                            src="./assets/pdf/giay-chung-nhan-HACCP.pdf"
-                            frameborder="0"
-                        ></iframe>
-                    </div>
-                    <div class="item">
-                        <h4 class="sub-title">
-                            Báo cáo kết quả thử nghiệm TEST REPOST
-                        </h4>
-                        <iframe
-                            src="./assets/pdf/bao-cao-ket-qua-thu-nghiem.pdf"
-                            frameborder="0"
-                        ></iframe>
+                    <div class="cart-collaterals">
+                        <div class="cart-sidebar">
+                            <div class="cart-totals">
+                                <span class="cart-total-price">
+                                    Cộng giỏ hàng
+                                </span>
+                                <div class="shop-wrapper">
+                                    <div class="shop-sub-total">
+                                        <span class="sub-total-title"
+                                            >Tạm tính</span
+                                        >
+                                        <span class="summary-sub-total"></span>
+                                    </div>
+                                    <div class="shop-delivery">
+                                        <span class="delivery-title"
+                                            >Giao hàng</span
+                                        >
+                                        <span class="cost"
+                                            >Phí: <b>30.000 VNĐ</b></span
+                                        >
+                                    </div>
+                                    <div class="shop-order-total">
+                                        <span class="order-total-title"
+                                            >Tổng</span
+                                        >
+                                        <span class="order-total-price"
+                                            >295.000 VNĐ</span
+                                        >
+                                    </div>
+                                </div>
+                                <a href="#!" class="btn btn-cart-sidebar"
+                                    >Tiến hành thanh toán</a
+                                >
+                            </div>
+                            <form action="#!" class="checkout-coupon">
+                                <label for="coupon" class="coupon-lable"
+                                    ><i class="fa-solid fa-tag"></i>
+                                    Phiếu ưu đãi
+                                </label>
+
+                                <input
+                                    type="text"
+                                    name="coupon"
+                                    id="coupon"
+                                    class="form-control"
+                                    placeholder="Mã ưu đãi"
+                                />
+                                <a href="#!" class="coupon-submit">Áp dụng</a>
+                                <!-- <input
+                                    type="submit"
+                                    value="Áp dụng"
+                                    id="coupon-submit"
+                                /> -->
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -330,5 +356,6 @@
             </div>
         </footer>
         <script type="module" src="./assets/scripts/cart.js"></script>
+        <script type="module" src="./assets/scripts/order.js"></script>
     </body>
 </html>

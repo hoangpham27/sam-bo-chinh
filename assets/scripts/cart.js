@@ -1,24 +1,26 @@
 import products from "./productsData.js";
 import { formatCurrencyVND } from "./constant.js";
+// import { genSubTotalAndTotalPrice } from "./order.js";
 
 function genCartQty() {
-    var cartQty = 0;
+    let cartQty = 0;
     cart.forEach((item) => {
         cartQty += item.quantity;
     });
     cartQuantity.innerHTML = cartQty;
 }
 
-function genTotalPrice() {
-    var totalPrice = 0;
+export function genTotalPrice(targetPrice) {
+    let totalPrice = 0;
     carts.forEach((cartsItem) => {
         totalPrice += cartsItem.productQuantity * cartsItem.currentPrice;
     });
-    cartCtaPrice.innerHTML = formatCurrencyVND(totalPrice);
+    targetPrice.innerHTML = formatCurrencyVND(totalPrice);
+    return totalPrice;
 }
 
 // Upadte in carts
-function findCart(productId) {
+function findCart(productId, listItem) {
     // Find product in products
     const productItem = products.find((product) => product.id === productId);
     // Find item.qty in cart
@@ -41,11 +43,11 @@ function findCart(productId) {
         });
     }
 
-    renderCart();
+    renderCart(listItem);
 }
 
 // Save items in cartListItems
-function renderCart() {
+function renderCart(listItem) {
     if (cart.length !== 0 && carts.length !== 0) {
         cartList.classList.remove("cart-list--no-cart");
         cartCta.style.display = "block";
@@ -65,8 +67,8 @@ function renderCart() {
            >${cart.name}</a
        >
        <div class="item-quantity-price">
-           <span class="item-quantity">${cart.productQuantity} ×
-           </span>
+           <span class="item-quantity">${cart.productQuantity}</span> 
+            <pre> x </pre>
            <span class="item-price"
                >${formatCurrencyVND(cart.currentPrice)}</span>
        </div>
@@ -78,17 +80,21 @@ function renderCart() {
    </span>
 </li>`
     );
-
-    cartListItems.innerHTML = html.join("");
+    console.log(listItem);
+    listItem.innerHTML = html.join("");
+    // cartListItems.innerHTML = html.join("");
+    // orderCartListItems.innerHTML = html.join("");
 }
 
 // Write this function because it use for the first load page and after addToCart
-function removeFromCart() {
+export function removeFromCart(target) {
+    let flag = false;
     if (cart.length && carts.length > 0) {
-        var itemsRemove = cartListItems.querySelectorAll(".js-item-remove");
+        var itemsRemove = document.querySelectorAll(".js-item-remove");
         // handle removeFromCart
         itemsRemove.forEach((itemRemove) => {
             itemRemove.addEventListener("click", () => {
+                flag = true;
                 itemRemove.parentElement.style.display = "none";
                 // Update cart and carts
                 let productId = itemRemove.parentElement.dataset.productId;
@@ -103,27 +109,55 @@ function removeFromCart() {
                 localStorage.setItem("cart", JSON.stringify(cart));
                 // Remove item from carts
                 carts = carts.filter((i) => i !== itemCarts);
+                console.log(target);
                 if (cart.length !== 0) {
-                    cartList.classList.remove("cart-list--no-cart");
+                    target.classList.remove("cart-list--no-cart");
                 } else {
-                    cartCta.style.display = "none";
-                    cartList.classList.add("cart-list--no-cart");
+                    target.classList.add("cart-list--no-cart");
+                    if (cartCta) {
+                        cartCta.style.display = "none";
+                    }
                 }
                 genCartQty();
-                genTotalPrice();
+                if (document.querySelector(".summary-sub-total")) {
+                    genTotalPrice(document.querySelector(".summary-sub-total"));
+                    document.querySelector(".order-total-price").innerHTML =
+                        formatCurrencyVND(
+                            genTotalPrice(
+                                document.querySelector(".summary-sub-total")
+                            ) +
+                                Number(
+                                    document
+                                        .querySelector(".shop-delivery .cost b")
+                                        .innerHTML.replace(".", "")
+                                        .replace(" VNĐ", "")
+                                )
+                        );
+                } else genTotalPrice(cartCtaPrice);
             });
         });
     }
+    console.log(flag);
+    return flag;
 }
 
 // handle add to cart
 export var cart = JSON.parse(localStorage.getItem("cart") || "[]");
-var cartQuantity = document.querySelector(".js-cart-quantity");
-var cartList = document.querySelector(".js-cart-list");
-var cartListItems = cartList.querySelector(".js-cart-list-items");
-var cartCta = cartList.querySelector(".js-cart-cta");
-var cartCtaPrice = cartList.querySelector(".js-cart-cta span");
-var carts = cart.map((item) => {
+const cartQuantity = document.querySelector(".js-cart-quantity");
+const cartList = document.querySelector(".js-cart-list");
+// const cartListItems = cartList.querySelector(".js-cart-list-items");
+const cartCta = cartList.querySelector(".js-cart-cta");
+const cartCtaPrice = cartList.querySelector(".js-cart-cta span");
+// const orderCartListItems = document.querySelector(".order-cart-list-items");
+// console.log(orderCartListItems);
+let listItem;
+if (document.querySelector(".order-cart-list-items")) {
+    cartList.style.display = "none";
+    listItem = document.querySelector(".order-cart-list-items");
+} else if (cartList.querySelector(".js-cart-list-items"))
+    listItem = cartList.querySelector(".js-cart-list-items");
+
+export var carts = cart.map((item) => {
     const productItem = products.find(
         (product) => product.id === item.productId
     );
@@ -133,16 +167,17 @@ var carts = cart.map((item) => {
     };
 });
 
+// Gen when access page in first time
 if (cart.length && carts.length > 0) {
     genCartQty();
-    renderCart();
-    genTotalPrice();
-    removeFromCart();
+    renderCart(listItem);
+    genTotalPrice(cartCtaPrice);
+    removeFromCart(cartList);
 } else {
     cartList.classList.add("cart-list--no-cart");
 }
 
-export function addToCart() {
+export function addToCart(listItem, target) {
     const productList = document.querySelectorAll(".product");
     productList.forEach((product) => {
         const btn = product.querySelector(".js-add-to-cart");
@@ -161,9 +196,10 @@ export function addToCart() {
             } else itemCartStorage.quantity += 1;
             localStorage.setItem("cart", JSON.stringify(cart));
             genCartQty();
-            findCart(productId);
-            genTotalPrice();
-            removeFromCart();
+            console.log(listItem);
+            findCart(productId, listItem);
+            genTotalPrice(cartCtaPrice);
+            removeFromCart(target);
         });
     });
 }

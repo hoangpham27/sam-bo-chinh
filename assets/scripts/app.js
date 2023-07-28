@@ -93,7 +93,10 @@ for (let i = 0; i < products.length; i++) {
 
 genLayoutProducts(product8s);
 
-addToCart();
+addToCart(
+    document.querySelector(".js-cart-list-items"),
+    document.querySelector(".js-cart-list")
+);
 
 // Lightbox gallery
 $(document).ready(function () {

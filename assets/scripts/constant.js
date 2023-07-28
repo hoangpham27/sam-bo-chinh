@@ -175,7 +175,7 @@ export function pagination(get, limit, display) {
 }
 
 export function searchEngine(blog) {
-    let searchable = blog;
+    let searchable = blog.slice();
 
     const searchAction = document.querySelector(".search-action");
     const searchField = document.querySelector(".search-field");
