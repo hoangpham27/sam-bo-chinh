@@ -1883,7 +1883,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 #order .shop-sub-total,
 #order .shop-delivery,
-#order .shop-order-total {
+#order .shop-order-total,
+#order .shop-order-coupon {
     display: flex;
     align-items: center;
     justify-content: space-between;

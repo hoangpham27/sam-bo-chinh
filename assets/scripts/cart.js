@@ -80,7 +80,7 @@ function renderCart(listItem) {
    </span>
 </li>`
     );
-    console.log(listItem);
+    // console.log(listItem);
     listItem.innerHTML = html.join("");
     // cartListItems.innerHTML = html.join("");
     // orderCartListItems.innerHTML = html.join("");
@@ -88,13 +88,11 @@ function renderCart(listItem) {
 
 // Write this function because it use for the first load page and after addToCart
 export function removeFromCart(target) {
-    let flag = false;
     if (cart.length && carts.length > 0) {
         var itemsRemove = document.querySelectorAll(".js-item-remove");
         // handle removeFromCart
         itemsRemove.forEach((itemRemove) => {
             itemRemove.addEventListener("click", () => {
-                flag = true;
                 itemRemove.parentElement.style.display = "none";
                 // Update cart and carts
                 let productId = itemRemove.parentElement.dataset.productId;
@@ -109,7 +107,7 @@ export function removeFromCart(target) {
                 localStorage.setItem("cart", JSON.stringify(cart));
                 // Remove item from carts
                 carts = carts.filter((i) => i !== itemCarts);
-                console.log(target);
+                // console.log(target);
                 if (cart.length !== 0) {
                     target.classList.remove("cart-list--no-cart");
                 } else {
@@ -137,8 +135,6 @@ export function removeFromCart(target) {
             });
         });
     }
-    console.log(flag);
-    return flag;
 }
 
 // handle add to cart
