@@ -8,12 +8,13 @@ const backToProducts = document.querySelector(".back-to-products");
 const orderCartListItems = document.querySelector(".order-cart-list-items");
 export let deliveryCost = 30000;
 
-let orderTotalPrice;
-
-if (carts.length > 0) {
-    rowCart.classList.remove(".cart-list--no-cart");
-} else {
-    rowCart.classList.add("cart-list--no-cart");
+export let orderTotalPrice = 0;
+if (document.querySelector("#order")) {
+    if (carts.length > 0) {
+        rowCart.classList.remove(".cart-list--no-cart");
+    } else {
+        rowCart.classList.add("cart-list--no-cart");
+    }
 }
 
 removeFromCart(rowCart);
@@ -94,6 +95,10 @@ function genSubTotalAndTotalPrice(couponPrice) {
         deliveryCost;
     document.querySelector(".order-total-price").innerHTML = formatCurrencyVND(
         orderTotalPriceLast - couponPrice
+    );
+    localStorage.setItem(
+        "orderTotalPrice",
+        JSON.stringify(orderTotalPriceLast - couponPrice)
     );
     return orderTotalPriceLast - couponPrice;
 }

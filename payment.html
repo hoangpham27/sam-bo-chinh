@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sản phẩm - Sâm Bố Chính Hoàng Gia</title>
+        <title>Thanh toán - Sâm Bố Chính Hoàng Gia</title>
         <!-- Favicon -->
         <link
             rel="apple-touch-icon"
@@ -119,10 +119,10 @@
                             <a href="./index.html">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="./introduce.html">Giới thiệu</a>
+                            <a href="#">Giới thiệu</a>
                         </li>
                         <li>
-                            <a href="#">Sản phẩm</a>
+                            <a href="./products.html">Sản phẩm</a>
                         </li>
                         <li>
                             <a href="./cer-ann.html">Chứng nhận - Công bố</a>
@@ -169,9 +169,7 @@
                                             class="btn cart-btn"
                                             >Xem Giỏ hàng</a
                                         >
-                                        <a
-                                            href="./payment.html"
-                                            class="btn pay-btn"
+                                        <a href="#!" class="btn pay-btn"
                                             >Thanh toán</a
                                         >
                                     </div>
@@ -183,31 +181,114 @@
             </div>
         </header>
 
-        <main class="main" id="products">
+        <main class="main" id="payment">
             <div class="content">
-                <div class="row">
-                    <nav class="breadcrumb">
-                        <a href="./index.html">Trang chủ</a>
-                        <span class="divider"> / </span>
-                        Sản phẩm
-                    </nav>
-                    <div class="result-select">
-                        <p class="result-count"></p>
-                        <select name="orderby" class="orderby">
-                            <option value="" disabled selected hidden>
-                                Sắp xếp
-                            </option>
-                            <option value="price-asc">
-                                Thứ tự theo giá: thấp đến cao
-                            </option>
-                            <option value="price-desc">
-                                Thứ tự theo giá: cao xuống thấp
-                            </option>
-                        </select>
-                    </div>
+                <h1 class="title">Thanh toán</h1>
+
+                <div class="row row-payment">
+                    <!-- <div class="payment-info"> -->
+                    <span class="info-title">Thông tin thanh toán</span>
+                    <form action="#!" class="payment-info">
+                        <div class="customer-details">
+                            <label
+                                for="customer-name"
+                                class="customer-name-lable"
+                                >Họ và tên *</label
+                            >
+                            <input
+                                type="text"
+                                name="customer-name"
+                                id="customer-name"
+                                class="form-control"
+                                placeholder="Nhập họ và tên của bạn"
+                                required
+                            />
+
+                            <label
+                                for="customer-address"
+                                class="customer-address-lable"
+                            >
+                                Địa chỉ *
+                            </label>
+                            <input
+                                type="text"
+                                name="customer-address"
+                                id="customer-address"
+                                class="form-control"
+                                placeholder="Nhập địa chỉ của bạn"
+                                required
+                            />
+
+                            <div class="customer-phone-address-wrap">
+                                <div class="customer-phone-wrap">
+                                    <label
+                                        for="customer-phone"
+                                        class="customer-phone-lable"
+                                        >Số điện thoại *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="customer-phone"
+                                        id="customer-phone"
+                                        class="form-control"
+                                        placeholder="Nhập số điện thoại của bạn"
+                                        required
+                                    />
+                                </div>
+                                <div class="customer-email-wrap">
+                                    <label
+                                        for="customer-email"
+                                        class="customer-email-lable"
+                                    >
+                                        Địa chỉ email *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="customer-email"
+                                        id="customer-email"
+                                        class="form-control"
+                                        placeholder="Nhập email của bạn"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <label
+                                for="customer-note"
+                                class="customer-note-lable"
+                            >
+                                Ghi chú đơn hàng (tuỳ chọn)
+                            </label>
+                            <input
+                                type="text"
+                                name="customer-note"
+                                id="customer-note"
+                                class="form-control"
+                                placeholder="Ghi chú về đơn đặt hàng của bạn, ví dụ: ghi chú đặc biệt liên quan đến giao hàng"
+                            />
+                            <a href="./order.html" class="btn back-to-order"
+                                ><i class="fa-solid fa-arrow-left-long"></i>
+                                Quay lại giỏ hàng</a
+                            >
+                        </div>
+                        <div class="shell-out">
+                            <div class="shell-out-total">
+                                <span class="shell-out-title"
+                                    >Tổng tiền cần thanh toán:</span
+                                >
+                                <span class="shell-out-price"></span>
+                                <p class="shell-out-msg">
+                                    Vui lòng thanh toán khi nhận hàng.
+                                </p>
+                            </div>
+                            <input
+                                type="submit"
+                                value="ĐẶT HÀNG"
+                                class="btn shell-out-btn"
+                            />
+                        </div>
+                    </form>
+                    <!-- </div> -->
                 </div>
-                <div class="products-layout"></div>
-                <ul class="pagination"></ul>
             </div>
         </main>
 
@@ -300,6 +381,6 @@
             </div>
         </footer>
         <script type="module" src="./assets/scripts/cart.js"></script>
-        <script type="module" src="./assets/scripts/products.js"></script>
+        <script type="module" src="./assets/scripts/payment.js"></script>
     </body>
 </html>

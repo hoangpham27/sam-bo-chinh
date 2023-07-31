@@ -119,18 +119,22 @@ export function removeFromCart(target) {
                 genCartQty();
                 if (document.querySelector(".summary-sub-total")) {
                     genTotalPrice(document.querySelector(".summary-sub-total"));
-                    document.querySelector(".order-total-price").innerHTML =
-                        formatCurrencyVND(
-                            genTotalPrice(
-                                document.querySelector(".summary-sub-total")
-                            ) +
-                                Number(
-                                    document
-                                        .querySelector(".shop-delivery .cost b")
-                                        .innerHTML.replace(".", "")
-                                        .replace(" VNĐ", "")
-                                )
+                    let orderTotalPrice =
+                        genTotalPrice(
+                            document.querySelector(".summary-sub-total")
+                        ) +
+                        Number(
+                            document
+                                .querySelector(".shop-delivery .cost b")
+                                .innerHTML.replace(".", "")
+                                .replace(" VNĐ", "")
                         );
+                    document.querySelector(".order-total-price").innerHTML =
+                        formatCurrencyVND(orderTotalPrice);
+                    localStorage.setItem(
+                        "orderTotalPrice",
+                        JSON.stringify(orderTotalPrice)
+                    );
                 } else genTotalPrice(cartCtaPrice);
             });
         });
@@ -147,8 +151,7 @@ const cartCtaPrice = cartList.querySelector(".js-cart-cta span");
 // const orderCartListItems = document.querySelector(".order-cart-list-items");
 // console.log(orderCartListItems);
 let listItem;
-if (document.querySelector(".order-cart-list-items")) {
-    cartList.style.display = "none";
+if (document.querySelector("#order")) {
     listItem = document.querySelector(".order-cart-list-items");
 } else if (cartList.querySelector(".js-cart-list-items"))
     listItem = cartList.querySelector(".js-cart-list-items");
