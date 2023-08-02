@@ -113,13 +113,19 @@
         />
 
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
-    <body>
+    <body class="preload">
         <header class="header">
             <div class="content">
+                <!-- Navbar PC -->
                 <nav class="navbar">
+                    <!-- Tablet/mobile menu -->
+                    <label for="menu-checkbox" class="toggle-menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
                     <!-- Logo -->
-                    <a href="#" class="logo">
+                    <a href="./index.html" class="logo">
                         <img
                             src="./assets/img/logo-sbc.png"
                             alt="Sâm bố chính hoàng gia"
@@ -128,9 +134,9 @@
                         />
                     </a>
                     <!-- Navigation -->
-                    <ul class="navigation">
+                    <ul id="pc-nav" class="navigation">
                         <li>
-                            <a href="#">Trang chủ</a>
+                            <a href="./index.html">Trang chủ</a>
                         </li>
                         <li>
                             <a href="./introduce.html">Giới thiệu</a>
@@ -169,66 +175,9 @@
                                     Chưa có sản phẩm trong giỏ hàng.
                                 </p>
                                 <!-- Cart item -->
-                                <ul class="cart-list-items js-cart-list-items">
-                                    <!-- <li class="cart-item">
-                                       
-                                        <a href="#!" class="cart-item-wrap">
-                                            <img
-                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
-                                                alt=""
-                                                class="img"
-                                            />
-                                        </a>
-                                        <div class="cart-item-info">
-                                            <a href="" class="item-name"
-                                                >Bồ Câu tần sâm Bố Chính</a
-                                            >
-                                            <div class="item-quantity-price">
-                                                <span class="item-quantity"
-                                                    >1 ×
-                                                </span>
-                                                <span class="item-price"
-                                                    >125000 VNĐ</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <span class="item-remove">
-                                            <i
-                                                class="fa-regular fa-circle-xmark"
-                                            ></i>
-                                        </span>
-                                    </li>
-                                    <li class="cart-item">
-                                      
-                                        <a href="#!" class="cart-item-wrap">
-                                            <img
-                                                src="./assets/img/products/bo-cau-tan-sam-bo-chinh.jpg"
-                                                alt=""
-                                                class="img"
-                                            />
-                                        </a>
-                                        <div class="cart-item-info">
-                                            <a href="" class="item-name"
-                                                >Bồ Câu tần sâm Bố Chính</a
-                                            >
-                                            <div class="item-quantity-price">
-                                                <span class="item-quantity"
-                                                    >1 ×</span
-                                                >
-                                                <span class="item-price"
-                                                    >125000&nbspVNĐ</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <span class="item-remove">
-                                            <i
-                                                class="fa-regular fa-circle-xmark"
-                                            ></i>
-                                        </span>
-                                    </li> -->
-                                </ul>
+                                <ul
+                                    class="cart-list-items js-cart-list-items"
+                                ></ul>
                                 <div class="cart-cta js-cart-cta">
                                     <p class="total-price">
                                         <strong>Tổng số phụ:</strong>
@@ -253,7 +202,35 @@
                 </nav>
             </div>
         </header>
+        <!-- Tablet/mobile header -->
+        <header class="mobile-header">
+            <input
+                type="checkbox"
+                name=""
+                id="menu-checkbox"
+                class="menu-checkbox"
+                hidden
+            />
 
+            <!-- Overlay -->
+            <label for="menu-checkbox" class="menu-overlay"></label>
+
+            <!-- Menu content -->
+            <div class="menu-drawer">
+                <!-- Logo -->
+                <a href="./index.html">
+                    <img
+                        src="./assets/img/logo-sbc.png"
+                        alt="Sâm bố chính hoàng gia"
+                        width="64"
+                        height="64"
+                    />
+                </a>
+
+                <!-- Navigation -->
+                <ul id="mobile-nav"></ul>
+            </div>
+        </header>
         <main class="main">
             <div class="main-slider">
                 <img
@@ -1069,6 +1046,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
         <!-- Magnific Popup core JS file -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script type="module" src="./assets/scripts/constant.js"></script>
         <script type="module" src="./assets/scripts/app.js"></script>
         <script type="module" src="./assets/scripts/cart.js"></script>
     </body>

@@ -278,3 +278,11 @@ export function searchEngine(blog) {
             searchResultListItems[currentFocus].firstElementChild.outerText;
     }
 }
+
+document.body.classList.remove("preload");
+
+const pcNav = document.querySelector("#pc-nav");
+const mobileNav = document.querySelector("#mobile-nav");
+
+// Copy from PC nav -> Mobile nav
+mobileNav.innerHTML = pcNav.innerHTML;

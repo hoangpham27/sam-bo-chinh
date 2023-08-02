@@ -99,11 +99,17 @@
             referrerpolicy="no-referrer"
         />
         <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
     </head>
-    <body>
+    <body class="preload">
         <header class="header">
             <div class="content">
+                <!-- Navbar PC -->
                 <nav class="navbar">
+                    <!-- Tablet/mobile menu -->
+                    <label for="menu-checkbox" class="toggle-menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
                     <!-- Logo -->
                     <a href="./index.html" class="logo">
                         <img
@@ -114,7 +120,7 @@
                         />
                     </a>
                     <!-- Navigation -->
-                    <ul class="navigation">
+                    <ul id="pc-nav" class="navigation">
                         <li>
                             <a href="./index.html">Trang chủ</a>
                         </li>
@@ -180,6 +186,36 @@
                         </div>
                     </div>
                 </nav>
+            </div>
+        </header>
+
+        <!-- Tablet/mobile header -->
+        <header class="mobile-header">
+            <input
+                type="checkbox"
+                name=""
+                id="menu-checkbox"
+                class="menu-checkbox"
+                hidden
+            />
+
+            <!-- Overlay -->
+            <label for="menu-checkbox" class="menu-overlay"></label>
+
+            <!-- Menu content -->
+            <div class="menu-drawer">
+                <!-- Logo -->
+                <a href="./index.html">
+                    <img
+                        src="./assets/img/logo-sbc.png"
+                        alt="Sâm bố chính hoàng gia"
+                        width="64"
+                        height="64"
+                    />
+                </a>
+
+                <!-- Navigation -->
+                <ul id="mobile-nav"></ul>
             </div>
         </header>
 
@@ -443,7 +479,7 @@
                         </div>
                         <div class="qr-code">
                             <h3 class="title-main">
-                                <span>Quét mã QR Code</span>
+                                <span>QR&nbspCode</span>
                             </h3>
                             <div class="body">
                                 <img
@@ -475,6 +511,7 @@
                 <p class="desc">Thiết kế web tại Huế - Eaglemedia.vn</p>
             </div>
         </footer>
+        <script type="module" src="./assets/scripts/constant.js"></script>
         <script type="module" src="./assets/scripts/cart.js"></script>
     </body>
 </html>

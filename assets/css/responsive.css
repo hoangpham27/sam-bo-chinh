@@ -1,0 +1,144 @@
+/* PC */
+@media screen and (min-width: 992px) {
+    .mobile-header {
+        display: none;
+    }
+}
+
+/* Tablet & mobile */
+@media screen and (max-width: 991px) {
+    /* Header */
+    .navbar {
+        position: relative;
+    }
+
+    .navbar .logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .navbar .navigation {
+        display: none;
+    }
+
+    .toggle-menu {
+        display: block;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease;
+    }
+
+    .menu-drawer {
+        position: fixed;
+        inset: 0 45% 0 0;
+        background: #fff;
+        z-index: 3;
+        padding: 60px;
+        transform: translateX(-100%);
+        transition: 0.3s ease;
+    }
+
+    .menu-drawer ul {
+        margin-top: 32px;
+    }
+
+    .menu-drawer ul a {
+        display: block;
+        padding: 14px 0;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .menu-checkbox:checked ~ .menu-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-checkbox:checked ~ .menu-drawer {
+        transform: translateX(0);
+    }
+
+    #mobile-nav li {
+        border-top: 1px solid #e2e2e2;
+        border-bottom: 1px solid #e2e2e2;
+    }
+
+    .header .header-cart:hover .cart-list {
+        display: none;
+    }
+
+    /* Footer */
+    .footer-1st iframe {
+        /* max-width: 100%; */
+        width: 100%;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Footer */
+    .footer-1st .row {
+        flex-wrap: wrap;
+        column-gap: 0px;
+    }
+
+    .footer-1st .about-us {
+        width: 100%;
+    }
+
+    .footer-1st .qr-code {
+        padding-right: 5px;
+        width: 50%;
+    }
+
+    .footer-1st .fanpage {
+        padding-left: 5px;
+        width: 50%;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+    /* Header */
+    .menu-drawer {
+        inset: 0 20% 0 0;
+        padding: 40px;
+        z-index: 3;
+    }
+
+    .header-cart .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 33px;
+    }
+
+    .header-cart .cart-title {
+        font-size: 0;
+    }
+
+    /* Footer */
+    .footer-1st .row {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .footer-1st .qr-code {
+        display: none;
+    }
+
+    .footer-1st .about-us,
+    .footer-1st .qr-code,
+    .footer-1st .fanpage {
+        width: 100%;
+    }
+}
