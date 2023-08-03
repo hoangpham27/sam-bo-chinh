@@ -78,7 +78,6 @@
 
     /* Footer */
     .footer-1st iframe {
-        /* max-width: 100%; */
         width: 100%;
     }
 }
@@ -140,5 +139,21 @@
     .footer-1st .qr-code,
     .footer-1st .fanpage {
         width: 100%;
+    }
+
+    /* Contact.html */
+    #contact .row-contact {
+        flex-wrap: wrap;
+        row-gap: 40px;
+    }
+
+    #contact .contact-us,
+    #contact .map {
+        width: 100%;
+    }
+
+    #contact .contact-form,
+    #contact .map-area {
+        margin-top: 20px;
     }
 }

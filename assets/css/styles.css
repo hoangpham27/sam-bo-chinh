@@ -71,6 +71,11 @@ input[type="search"]::-webkit-search-results-decoration {
     -ms-transition: none !important;
     -o-transition: none !important;
 }
+
+.row {
+    display: flex;
+    margin: 0 -15px;
+}
 /* =============== Header ===============*/
 
 .header {
@@ -345,18 +350,18 @@ input[type="search"]::-webkit-search-results-decoration {
     padding: 100px 0;
 }
 
-.introduce .row {
-    display: flex;
+.introduce .row-introduce {
     column-gap: 80px;
+    align-items: center;
 }
 
 .introduce .info {
-    /* flex: 1.48; */
-    /* width: 58.3333333333%; */
+    width: 58.3333333333%;
+    padding: 0 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 676px;
+    /* max-width: 676px; */
 }
 
 .introduce .title {
@@ -416,9 +421,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .introduce .banner {
-    /* width: 41.6666666667%; */
-    /* margin-left: auto; */
-    /* flex: 1; */
+    width: 41.6666666667%;
+    padding: 0 15px;
 }
 
 .introduce .banner-introduce {
@@ -518,7 +522,8 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .features .accordion,
 .features .image {
-    flex: 1;
+    padding: 0 15px;
+    width: calc(100% / 3);
 }
 
 .features .accordion-btn {
@@ -726,6 +731,11 @@ input[type="search"]::-webkit-search-results-decoration {
     text-align: center;
 }
 
+.pictrues-videos .gallery,
+.pictrues-videos .video {
+    padding: 0 15px;
+}
+
 .pictrues-videos .gallery-pictures {
     margin-top: 50px;
     display: grid;
@@ -746,10 +756,6 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.pictrues-videos .video {
-    margin-left: 20px;
 }
 
 .pictrues-videos .video-wrap {
@@ -971,7 +977,7 @@ input[type="search"]::-webkit-search-results-decoration {
     opacity: 0.6;
     padding: 20px;
     font-size: 2rem;
-    z-index: 2;
+    z-index: 1;
     transition: 0.2s ease-in-out;
     cursor: pointer;
 }
@@ -1153,15 +1159,15 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: rgb(253, 246, 240);
 }
 
-.contact .row {
-    display: flex;
-    margin: 0 -15px;
-}
-
 .contact .contact-us,
 .contact .map {
     padding: 0 15px;
-    flex: 1;
+    width: 50%;
+    text-align: center;
+}
+
+.contact .map iframe {
+    width: 100%;
 }
 
 .contact .title {
@@ -1169,7 +1175,6 @@ input[type="search"]::-webkit-search-results-decoration {
     font-family: "Exo 2", sans-serif;
     font-size: 3rem;
     font-weight: 700;
-    text-align: center;
 }
 
 .contact .contact-form,
@@ -1187,11 +1192,10 @@ input[type="search"]::-webkit-search-results-decoration {
     background-color: rgb(26, 87, 72);
 }
 
-.footer-1st .row {
-    display: flex;
-    /* align-items: stretch; */
-    justify-content: center;
-    column-gap: 30px;
+.footer-1st .about-us,
+.footer-1st .qr-code,
+.footer-1st .fanpage {
+    padding: 0 15px;
 }
 
 .footer-1st .about-us {
@@ -1201,6 +1205,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .footer-1st .qr-code {
     width: 25%;
 }
+
 .footer-1st .fanpage {
     width: 35%;
 }
@@ -1221,10 +1226,8 @@ input[type="search"]::-webkit-search-results-decoration {
     left: 0;
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
 }
-/* #6d948a */
 
 .footer-1st .body {
-    /* max-width: 100%; */
     margin-top: 20px;
     opacity: 0.9;
 }
@@ -1262,11 +1265,6 @@ input[type="search"]::-webkit-search-results-decoration {
     width: 200px;
     height: 200px;
     object-fit: cover;
-}
-
-.footer-1st iframe {
-    /* max-width: 100%;
-    width: 100%; */
 }
 
 .footer-2st {
@@ -1344,11 +1342,9 @@ input[type="search"]::-webkit-search-results-decoration {
     text-align: center;
 }
 
-#products .row {
-    display: flex;
+#products .row-product {
     align-items: center;
     justify-content: space-between;
-    margin: 0 -15px;
 }
 
 #products .breadcrumb {
@@ -1434,27 +1430,23 @@ input[type="search"]::-webkit-search-results-decoration {
     text-align: center;
 }
 
-#cer-ann .cer-ann-layout {
-    display: flex;
+#cer-ann .row-cer-ann {
     flex-wrap: wrap;
-    /* column-gap: 30px; */
-    margin: 0 -15px;
 }
 
 #cer-ann .item {
-    width: 50%;
+    margin-top: 35px;
     padding: 0 15px;
-    /* margin-right: 15px; */
+    width: 50%;
 }
 
 #cer-ann .sub-title {
-    margin-top: 35px;
     font-family: "Exo 2", sans-serif;
     font-size: 2rem;
     font-weight: 700;
 }
 
-#cer-ann .cer-ann-layout iframe {
+#cer-ann .row-cer-ann iframe {
     margin-top: 15px;
     width: 100%;
     height: 813px;
