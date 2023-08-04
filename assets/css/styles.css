@@ -325,14 +325,15 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .header .cart-quantity {
     position: absolute;
-    top: 0;
-    right: 0;
-    background-color: var(--background-color);
+    top: -8px;
+    right: -8px;
+    background-color: #fff;
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    opacity: 0.8;
+    opacity: 0.9;
     text-align: center;
+    color: var(--primary-color);
     line-height: 18px;
     z-index: 1;
 }
@@ -1446,10 +1447,10 @@ input[type="search"]::-webkit-search-results-decoration {
     font-weight: 700;
 }
 
-#cer-ann .row-cer-ann iframe {
+#cer-ann .row-cer-ann object {
     margin-top: 15px;
-    width: 100%;
     height: 813px;
+    overflow-x: hidden !important;
 }
 
 /* ===================== knowledge.html and newspaper.html (blog)======================= */
@@ -2066,7 +2067,3 @@ input[type="search"]::-webkit-search-results-decoration {
     color: var(--primary-color);
     display: none;
 } */
-
-.toggle-menu {
-    display: none;
-}
