@@ -605,17 +605,23 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .products-layout {
     margin-top: 50px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 
 .products .product,
 #products .product {
     position: relative;
+    flex-direction: column;
+    row-gap: 14px;
     /* outline: 9px solid #fff; */
     border: 1px solid #e8e8e8;
-    /* Do padding nên grid item sẽ chòi ra grid layout */
-    padding: 9px;
+    /* Do padding nên grid item sẽ chòi ra grid layout*/
+    padding: 5px;
+    width: 25%;
     animation: fadeIn linear 0.48s;
 }
 
@@ -629,7 +635,7 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .product .product-name {
-    margin-top: 14px;
+    /* margin-top: 14px; */
     display: inline-block;
     width: 100%;
     color: black;
@@ -640,10 +646,10 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .product .product-price-cart {
-    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: auto;
 }
 
 .product .product-sale {
@@ -694,7 +700,8 @@ input[type="search"]::-webkit-search-results-decoration {
     text-transform: none;
     letter-spacing: 0.0216em;
     line-height: 2.4;
-    padding: 2px 12.5px;
+    padding: 4px;
+    /* padding: 2px 12.5px; */
 }
 
 .product .product-cart-btn:hover {

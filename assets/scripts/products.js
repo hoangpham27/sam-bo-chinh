@@ -16,22 +16,33 @@ orderBy.addEventListener("change", () => {
     }
     genLayoutProducts(products);
     // pagination when sort
-    pagination(".product", 16, "block");
+    choosePagination(tablet);
+    // tablet.addEventListener(choosePagination);
 });
 
 function sortAsc() {
-    products.sort((a, b) => {
+    return products.sort((a, b) => {
         return a.currentPrice - b.currentPrice;
     });
-    return products;
 }
 
 function sortDesc() {
-    products.sort((a, b) => {
+    return products.sort((a, b) => {
         return b.currentPrice - a.currentPrice;
     });
-    return products;
 }
 
 // pagination first time for default
-pagination(".product", 16, "block");
+pagination(".product", 16, "flex");
+
+
+function choosePagination(tablet) {
+    if (tablet.matches) { // If media query matches
+        pagination(".product", 15, "flex");
+    } 
+    else pagination(".product", 16, "flex");
+  }
+  
+  var tablet = window.matchMedia("(min-width: 768px) and (max-width: 991px)")
+  choosePagination(tablet); // Call listener function at run time
+//   tablet.addEventListener(choosePagination()) // Attach listener function on state changes
