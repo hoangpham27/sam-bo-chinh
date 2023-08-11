@@ -1,4 +1,4 @@
-import { cart, carts, removeFromCart, genTotalPrice } from "./cart.js";
+import { cart, carts, removeFromCart, genTotalPrice, genCartQty } from "./cart.js";
 import { formatCurrencyVND } from "./constant.js";
 
 const rowCart = document.querySelector(".row-cart");
@@ -53,11 +53,12 @@ cartItems.forEach((item) => {
         if (itemFindedInCart.quantity >= 1) {
             let plusBtn = document.createElement("button");
             plusBtn.innerText = "+";
-            plusBtn.addEventListener("click", () => {
+            plusBtn.addEventListener("click", (e) => {
                 itemFindedInCart.quantity += 1;
                 itemFindedInCarts.productQuantity += 1;
                 plusMinusBtn.remove();
                 loadBtnAgain();
+                e.stopPropagation();
             });
             plusMinusBtn.appendChild(plusBtn);
         }
@@ -65,15 +66,16 @@ cartItems.forEach((item) => {
         if (itemFindedInCart.quantity > 1) {
             let minusBtn = document.createElement("button");
             minusBtn.innerText = "-";
-            minusBtn.addEventListener("click", () => {
+            minusBtn.addEventListener("click", (e) => {
                 itemFindedInCart.quantity -= 1;
                 itemFindedInCarts.productQuantity -= 1;
                 plusMinusBtn.remove();
                 loadBtnAgain();
+                e.stopPropagation();
             });
             plusMinusBtn.appendChild(minusBtn);
         }
-
+        genCartQty();
         itemQuantityPrice.appendChild(plusMinusBtn);
     }
 
@@ -153,3 +155,6 @@ couponSubmit.addEventListener("click", () => {
     couponSubmitMsg.innerHTML = couponSubmitMsgOut;
     checkoutCoupon.appendChild(couponSubmitMsg);
 });
+
+// const plusMinusBtn = document.querySelectorAll('.plus-minus-btn');
+// plusMinusBtn.addEventListener()

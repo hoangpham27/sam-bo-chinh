@@ -2,7 +2,7 @@ import products from "./productsData.js";
 import { formatCurrencyVND } from "./constant.js";
 // import { genSubTotalAndTotalPrice } from "./order.js";
 
-function genCartQty() {
+export function genCartQty() {
     let cartQty = 0;
     cart.forEach((item) => {
         cartQty += item.quantity;

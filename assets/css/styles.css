@@ -194,6 +194,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .cart-item {
     display: flex;
     align-items: center;
+    column-gap: 6px;
     border-bottom: 1px solid #e8e8e8;
     padding: 10px 0px 10px;
     margin-left: 22px;
@@ -213,7 +214,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .cart-item-info {
     display: flex;
     flex-direction: column;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .cart-item-info .item-name {
@@ -1839,7 +1840,6 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 #order .cart-item-info {
-    margin-left: 8px;
     width: 85%;
     flex-direction: row;
     align-items: center;
@@ -1862,7 +1862,7 @@ input[type="search"]::-webkit-search-results-decoration {
     justify-content: flex-end;
     margin: 0;
     width: 25%;
-    column-gap: 4px;
+    gap: 4px;
 }
 
 #order .sub-total {
