@@ -221,111 +221,106 @@
         <main class="main" id="payment">
             <div class="content">
                 <h1 class="title">Thanh toán</h1>
+                <p class="info-title">Thông tin thanh toán</span>
+                <form action="#!" class="row row-payment">
+                    <div class="customer-details">
+                        <label
+                            for="customer-name"
+                            class="customer-name-lable"
+                            >Họ và tên *</label
+                        >
+                        <input
+                            type="text"
+                            name="customer-name"
+                            id="customer-name"
+                            class="form-control"
+                            placeholder="Nhập họ và tên của bạn"
+                            required
+                        />
 
-                <div class="row row-payment">
-                    <!-- <div class="payment-info"> -->
-                    <span class="info-title">Thông tin thanh toán</span>
-                    <form action="#!" class="payment-info">
-                        <div class="customer-details">
-                            <label
-                                for="customer-name"
-                                class="customer-name-lable"
-                                >Họ và tên *</label
-                            >
-                            <input
-                                type="text"
-                                name="customer-name"
-                                id="customer-name"
-                                class="form-control"
-                                placeholder="Nhập họ và tên của bạn"
-                                required
-                            />
+                        <label
+                            for="customer-address"
+                            class="customer-address-lable"
+                        >
+                            Địa chỉ *
+                        </label>
+                        <input
+                            type="text"
+                            name="customer-address"
+                            id="customer-address"
+                            class="form-control"
+                            placeholder="Nhập địa chỉ của bạn"
+                            required
+                        />
 
-                            <label
-                                for="customer-address"
-                                class="customer-address-lable"
-                            >
-                                Địa chỉ *
-                            </label>
-                            <input
-                                type="text"
-                                name="customer-address"
-                                id="customer-address"
-                                class="form-control"
-                                placeholder="Nhập địa chỉ của bạn"
-                                required
-                            />
-
-                            <div class="customer-phone-address-wrap">
-                                <div class="customer-phone-wrap">
-                                    <label
-                                        for="customer-phone"
-                                        class="customer-phone-lable"
-                                        >Số điện thoại *
-                                    </label>
-                                    <input
-                                        type="text"
-                                        name="customer-phone"
-                                        id="customer-phone"
-                                        class="form-control"
-                                        placeholder="Nhập số điện thoại của bạn"
-                                        required
-                                    />
-                                </div>
-                                <div class="customer-email-wrap">
-                                    <label
-                                        for="customer-email"
-                                        class="customer-email-lable"
-                                    >
-                                        Địa chỉ email *
-                                    </label>
-                                    <input
-                                        type="email"
-                                        name="customer-email"
-                                        id="customer-email"
-                                        class="form-control"
-                                        placeholder="Nhập email của bạn"
-                                        required
-                                    />
-                                </div>
+                        <div class="customer-phone-address-wrap">
+                            <div class="customer-phone-wrap">
+                                <label
+                                    for="customer-phone"
+                                    class="customer-phone-lable"
+                                    >Số điện thoại *
+                                </label>
+                                <input
+                                    type="text"
+                                    name="customer-phone"
+                                    id="customer-phone"
+                                    class="form-control"
+                                    placeholder="Nhập số điện thoại của bạn"
+                                    required
+                                />
                             </div>
-                            <label
-                                for="customer-note"
-                                class="customer-note-lable"
-                            >
-                                Ghi chú đơn hàng (tuỳ chọn)
-                            </label>
-                            <input
-                                type="text"
-                                name="customer-note"
-                                id="customer-note"
-                                class="form-control"
-                                placeholder="Ghi chú về đơn đặt hàng của bạn, ví dụ: ghi chú đặc biệt liên quan đến giao hàng"
-                            />
-                            <a href="./order.html" class="btn back-to-order"
-                                ><i class="fa-solid fa-arrow-left-long"></i>
-                                Quay lại giỏ hàng</a
-                            >
-                        </div>
-                        <div class="shell-out">
-                            <div class="shell-out-total">
-                                <span class="shell-out-title"
-                                    >Tổng tiền cần thanh toán:</span
+                            <div class="customer-email-wrap">
+                                <label
+                                    for="customer-email"
+                                    class="customer-email-lable"
                                 >
-                                <span class="shell-out-price"></span>
-                                <p class="shell-out-msg">
-                                    Vui lòng thanh toán khi nhận hàng.
-                                </p>
+                                    Địa chỉ email *
+                                </label>
+                                <input
+                                    type="email"
+                                    name="customer-email"
+                                    id="customer-email"
+                                    class="form-control"
+                                    placeholder="Nhập email của bạn"
+                                    required
+                                />
                             </div>
-                            <input
-                                type="submit"
-                                value="ĐẶT HÀNG"
-                                class="btn shell-out-btn"
-                            />
                         </div>
-                    </form>
-                    <!-- </div> -->
-                </div>
+                        <label
+                            for="customer-note"
+                            class="customer-note-lable"
+                        >
+                            Ghi chú đơn hàng (tuỳ chọn)
+                        </label>
+                        <input
+                            type="text"
+                            name="customer-note"
+                            id="customer-note"
+                            class="form-control"
+                            placeholder="Ghi chú về đơn đặt hàng của bạn, ví dụ: ghi chú đặc biệt liên quan đến giao hàng"
+                        />
+                        <a href="./order.html" class="btn back-to-order"
+                            ><i class="fa-solid fa-arrow-left-long"></i>
+                            Quay lại giỏ hàng</a
+                        >
+                    </div>
+                    <div class="shell-out">
+                        <div class="shell-out-total">
+                            <span class="shell-out-title"
+                                >Tổng tiền cần thanh toán:</span
+                            >
+                            <span class="shell-out-price"></span>
+                            <p class="shell-out-msg">
+                                Vui lòng thanh toán khi nhận hàng.
+                            </p>
+                        </div>
+                        <input
+                            type="submit"
+                            value="ĐẶT HÀNG"
+                            class="btn shell-out-btn"
+                        />
+                    </div>
+                </form>
             </div>
         </main>
 

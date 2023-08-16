@@ -178,7 +178,6 @@ input[type="search"]::-webkit-search-results-decoration {
     color: #777777;
     font-size: 1.8rem;
     line-height: 1.42;
-    /* line-height: 25.6px; */
 }
 
 .header .cart-list--no-cart .msg {
@@ -1990,19 +1989,19 @@ input[type="search"]::-webkit-search-results-decoration {
     margin-top: 30px;
 }
 
-#payment .payment-info {
-    margin: 0 -15px;
+#payment .payment-info {  
     display: flex;
+    padding: 0 15px;
 }
 
 #payment .info-title {
+    margin-top: 30px;  
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
 }
 
 #payment .customer-details {
-    margin-top: 20px;
     padding: 0 15px;
     width: calc(8 / 12 * 100%);
 }
@@ -2025,17 +2024,15 @@ input[type="search"]::-webkit-search-results-decoration {
 
 #payment .customer-phone-wrap,
 #payment .customer-email-wrap {
-    width: 100%;
+    width: 50%;
 }
 
 #payment .shell-out {
-    margin-top: 20px;
-    padding: 0 15px;
     display: flex;
-    /* align-items: center; */
     flex-direction: column;
-    width: calc(4 / 12 * 100%);
+    padding: 0 15px;
     border-left: 1px solid #ececec;
+    width: calc(4 / 12 * 100%);
 }
 
 #payment .back-to-order {

@@ -286,6 +286,25 @@
         font-size: 1.5rem;
     }
 
+    /* Payment.html */
+    #payment .row-payment {
+        flex-wrap: wrap;
+        row-gap: 20px;
+    }
+
+    #payment .customer-details, #payment .shell-out {
+        width: 100%;
+        border: none;
+    }
+    
+    #payment .customer-phone-address-wrap {
+        flex-wrap: wrap;
+    }
+
+    #payment .customer-phone-wrap, #payment .customer-email-wrap {
+        width: 100%;
+    }
+    
     /* Footer */
     .footer-1st .row {
         flex-direction: column;
