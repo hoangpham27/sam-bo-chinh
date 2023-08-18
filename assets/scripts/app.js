@@ -23,6 +23,29 @@ $(document).ready(function () {
         slidesToShow: 3.98,
         slidesToScroll: 1,
         arrows: false,
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                },
+            },
+        ],
     });
 });
 
@@ -33,7 +56,7 @@ function togglePanel() {
     // Xử lý khi click vào chính nó để bật tắt
     var panel = this.nextElementSibling;
     if (panel.clientHeight === 0) {
-        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.style.maxHeight = panel.scrollHeight + 40 + "px";
         panel.style.border = "1px dashed #ddd";
         Object.assign(this.style, {
             backgroundColor: "var(--primary-color)",
@@ -135,6 +158,28 @@ $(document).ready(function () {
             "<button type='button' class='slick-prev slick-arrow-newspaper'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
         nextArrow:
             "<button type='button' class='slick-next slick-arrow-newspaper'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                },
+            },
+        ],
     });
 });
 
@@ -151,6 +196,14 @@ $(document).ready(function () {
             "<button type='button' class='slick-prev slick-arrow-feedback'><i class='fa-solid fa-angle-left'></i></button>",
         nextArrow:
             "<button type='button' class='slick-next slick-arrow-feedback'><i class='fa-solid fa-angle-right'></i></button>",
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                },
+            },
+        ],
     });
 });
 
@@ -167,5 +220,28 @@ $(document).ready(function () {
             "<button type='button' class='slick-prev slick-arrow-knowledge'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
         nextArrow:
             "<button type='button' class='slick-next slick-arrow-knowledge'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+        responsive: [
+            {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                },
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    arrows: false,
+                },
+            },
+        ],
     });
 });
