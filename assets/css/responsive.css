@@ -86,6 +86,7 @@
     /* index.html */
     .pictures-videos .gallery-pictures {
         grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 170px 170px 170px;
     }
 
     .row-pictures-videos {
