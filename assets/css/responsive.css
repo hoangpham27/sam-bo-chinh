@@ -92,6 +92,7 @@
     .row-pictures-videos {
         flex-wrap: wrap;
         row-gap: 40px;
+        justify-content: center;
     }
 
     .pictures-videos .gallery,
@@ -155,9 +156,9 @@
         height: 80px;
     }
 
-    .features .accordion-btn:hover {
+    .pictures-videos .video-wrap iframe {
+        height: 315px;
     }
-
     /* Products.html */
     .products .product,
     #products .product {
